@@ -1,5 +1,6 @@
 import React from 'react';
 import './HeroSection.css';
+import dashboard_img from '../../assets/painel-de-controle.png';
 
 const HeroSection = () => {
   return (
@@ -10,6 +11,7 @@ const HeroSection = () => {
       Junte-se à comunidade e faça a diferença!
       </p>
       <button className='button-start'>Começar</button>
+      <img src= {dashboard_img} alt = 'imagem dashboard' className='dashboard-img'/>
     </section>
   );
 };
