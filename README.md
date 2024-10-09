@@ -42,15 +42,13 @@ O **DebugClub** é um site colaborativo onde desenvolvedores podem compartilhar 
 
 ## Autores
 
-- Aluno 1
-- Aluno 2
-- Aluno 3
-- Aluno 4
-
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
-
----
-
-Sinta-se à vontade para modificar este Read.me conforme necessário!
+Arthur
+Marcello Fernandes
+Vyktor Felipe
+Larissa Lima
+João Miguel
+João Rietra
+Hugo Ponciano
+Mariana Ferreira
+Lucas Lima
+Ivo Junior
