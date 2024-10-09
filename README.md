@@ -34,11 +34,14 @@ Contribuições: Fique à vontade para enviar pull requests com melhorias ou nov
 Demonstração
 
 Autores
-Aluno 1
-Aluno 2
-Aluno 3
-Aluno 4
-Licença
-Este projeto está licenciado sob a Licença MIT.
+Vyktor Felipe
+Marcello Fernandes
+Larissa Lima
+João Miguel
+Arthur
+Ivo Junior
+João Rietra
+Lucas Lima
+Hugo Ponciano
 
 Sinta-se à vontade para modificar este Read.me conforme necessário!
