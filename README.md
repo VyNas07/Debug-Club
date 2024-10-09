@@ -36,9 +36,6 @@ O **DebugClub** é um site colaborativo onde desenvolvedores podem compartilhar 
 
 4. **Contribuições**: Fique à vontade para enviar pull requests com melhorias ou novas funcionalidades!
 
-## Demonstração
-
-![Screenshot do projeto](link-para-screenshot)
 
 ## Autores
 
