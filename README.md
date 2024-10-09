@@ -1,57 +1,56 @@
-Read.me - DebugClub
+## Descrição do Projeto
 
-Descrição do Projeto:
+O **DebugClub** é um site colaborativo onde desenvolvedores podem compartilhar seus repositórios do GitHub. O objetivo é ajudar uns aos outros a resolver bugs e problemas de código, promovendo a colaboração e o aprendizado entre programadores.
 
-O DebugClub é um site colaborativo onde desenvolvedores podem compartilhar seus repositórios do GitHub. O objetivo é ajudar uns aos outros a resolver bugs e problemas de código, promovendo a colaboração e o aprendizado entre programadores.
+## Tecnologias Utilizadas
 
-Tecnologias Utilizadas:
+- **HTML**: Estruturação das páginas do site.
+- **CSS**: Estilização para uma interface atraente e responsiva.
+- **JavaScript**: Interatividade e manipulação do DOM.
+- **React**: Construção de componentes reutilizáveis e gerenciamento do estado da aplicação.
 
-HTML: Estruturação das páginas do site.
+## Funcionalidades
 
-CSS: Estilização para uma interface atraente e responsiva.
+- **Compartilhamento de Repositórios**: Usuários podem adicionar links de repositórios do GitHub para que outros possam visualizar e ajudar.
+- **Busca e Filtros**: Facilita a busca por repositórios específicos ou por problemas comuns.
+- **Sistema de Comentários**: Permite que os usuários deixem feedback e sugestões diretamente nos repositórios.
+- **Perfil de Usuário**: Cada usuário pode criar um perfil para exibir suas contribuições e repositórios compartilhados.
 
-JavaScript: Interatividade e manipulação do DOM.
+## Como Contribuir
 
-React: Construção de componentes reutilizáveis e gerenciamento do estado da aplicação.
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/seu-usuario/debugclub.git
+   ```
 
-Funcionalidades:
+2. **Instale as dependências**:
+   ```bash
+   cd debugclub
+   npm install
+   ```
 
-Compartilhamento de Repositórios: Usuários podem adicionar links de repositórios do GitHub para que outros possam visualizar e ajudar.
+3. **Inicie o servidor**:
+   ```bash
+   npm start
+   ```
 
-Busca e Filtros: Facilita a busca por repositórios específicos ou por problemas comuns.
+4. **Contribuições**: Fique à vontade para enviar pull requests com melhorias ou novas funcionalidades!
 
-Sistema de Comentários: Permite que os usuários deixem feedback e sugestões diretamente nos repositórios.
+## Demonstração
 
-Perfil de Usuário: Cada usuário pode criar um perfil para exibir suas contribuições e repositórios compartilhados.
+![Screenshot do projeto](link-para-screenshot)
 
-Como Contribuir:
-Clone o repositório:
+## Autores
 
-bash
-Copy code
-git clone https://github.com/seu-usuario/debugclub.git
-Instale as dependências:
+- Aluno 1
+- Aluno 2
+- Aluno 3
+- Aluno 4
 
-bash
-Copy code
-cd debugclub
-npm install
-Inicie o servidor:
+## Licença
 
-bash
-Copy code
-npm start
-Contribuições: Fique à vontade para enviar pull requests com melhorias ou novas funcionalidades!
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
-Autores
-Vyktor Felipe
-Marcello Fernandes
-Larissa Lima
-João Miguel
-Arthur
-Ivo Junior
-João Rietra
-Lucas Lima
-Hugo Ponciano
+---
 
 Sinta-se à vontade para modificar este Read.me conforme necessário!
