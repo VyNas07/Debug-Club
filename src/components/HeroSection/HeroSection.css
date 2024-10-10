@@ -1,0 +1,131 @@
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 50px 0px;
+    background: linear-gradient(180deg, #DEF7FA, #ffffff);
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 90px;
+}
+
+.hero-text {
+    max-width: 60%;
+
+}
+.hero-section h1 {
+    margin-top: -20px;
+    font-size: 2.9rem;
+    font-weight: bold;
+    color: #6B8BBD;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    width: 25ch;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 40px;
+    max-width: 800px;
+    font-weight: 600;
+    width: 42ch;
+    margin-top: 50px;
+
+}
+
+.button-start {
+    background-color: #4a90e2;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 60px;
+
+}
+
+.button-start:hover{
+    background-color: #357ab7;
+}
+
+.dashboard-img {
+    max-width: 400px;
+    height: auto;
+    transform: rotate(-12.74deg);
+    transition: transform 0.4s ease;
+    margin-left: 220px;
+    margin-top: -80px;
+}
+
+@media (max-width: 1024px) {
+    .hero-section {
+        flex-direction: column;
+        padding: 40px 30px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+        width: auto;
+        margin-bottom: 15px;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+        width: auto;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
+
+    .button-start {
+        width: 150px;
+        bottom: 10px;
+    }
+
+    .dashboard-img {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .button-start {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 20px 15px;
+        
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+        margin-top: 20px;
+    }
+
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+}

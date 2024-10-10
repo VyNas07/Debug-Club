@@ -58,3 +58,83 @@
     color: #ffffff;
     transform: scale(1.05);
   }
+
+  
+  @media (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 50px;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        margin: 5px 10px;
+        padding: 10px 15px;
+    }
+
+    .button-login {
+        margin-top: 15px;
+        margin-left: 0;
+        width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 40px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .button-login {
+        margin-top: 20px;
+        margin-left: 0;
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+        padding: 12px 20px;
+        width: 100%;
+        text-align: center;
+        background-color: #3b75b4;
+    }
+
+    .button-login {
+        width: 100%;
+        margin-top: 20px;
+        padding: 12px;
+    }
+}
