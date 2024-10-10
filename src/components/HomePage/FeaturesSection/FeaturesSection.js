@@ -1,9 +1,9 @@
 import React from 'react';
 import './FeaturesSection.css';
-import medalhaIcon from '../../assets/medalha.png';
-import graficoIcon from '../../assets/grafico-de-barras.png';
-import trofeuIcon from '../../assets/trofeu.png';
-import githubIcon from '../../assets/github.png';
+import medalhaIcon from '../../../assets/IMG-HomePage/medalha.png';
+import graficoIcon from '../../../assets/IMG-HomePage/grafico-de-barras.png';
+import trofeuIcon from '../../../assets/IMG-HomePage/trofeu.png';
+import githubIcon from '../../../assets/IMG-HomePage/github.png';
 
 const features = [
   {

@@ -1,6 +1,6 @@
 import React from 'react'
 import './RankingSection.css'
-import RankingImg from '../../assets/Ranking.png'
+import RankingImg from '../../../assets/IMG-HomePage/Ranking.png'
 
 const RankingSection = () => {
   return (

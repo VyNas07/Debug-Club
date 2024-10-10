@@ -1,6 +1,6 @@
 import React from 'react';
 import './HeroSection.css';
-import dashboard_img from '../../assets/painel-de-controle.png';
+import dashboard_img from '../../../assets/IMG-HomePage/painel-de-controle.png';
 
 const HeroSection = () => {
   return (

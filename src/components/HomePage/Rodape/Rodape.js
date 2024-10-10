@@ -1,7 +1,7 @@
 import React from 'react';
-import logoDebugClub from '../../assets/DebugClub.png';
-import facebookLogo from '../../assets/facebook.png';
-import instagramLogo from '../../assets/instagram.png';
+import logoDebugClub from '../../../assets/IMG-HomePage/DebugClub.svg';
+import facebookLogo from '../../../assets/IMG-HomePage/facebook.png';
+import instagramLogo from '../../../assets/IMG-HomePage/instagram.png';
 
 
 const Rodape = () => {

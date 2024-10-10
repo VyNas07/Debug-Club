@@ -1,6 +1,6 @@
 import React from 'react'
 import './Header.css';
-import logoDebugClub from '../../assets/DebugClub.svg'
+import logoDebugClub from '../../../assets/IMG-HomePage/DebugClub.svg'
 
 const Header = () => {
   return (

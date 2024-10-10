@@ -1,9 +1,9 @@
 import React from 'react'
-import cincoEstrelas from '../../assets/5estrelas.svg';
-import quatro_meioEstrelas from '../../assets/4meioestrelas.svg';
-import quatroEstrelas from '../../assets/4estrelas.svg';
-import tres_meioEstrelas from '../../assets/3estrelasmeio.svg';
-import userImg from '../../assets/user.svg';
+import cincoEstrelas from '../../../assets/IMG-HomePage/5estrelas.svg';
+import quatro_meioEstrelas from '../../../assets/IMG-HomePage/4meioestrelas.svg';
+import quatroEstrelas from '../../../assets/IMG-HomePage/4estrelas.svg';
+import tres_meioEstrelas from '../../../assets/IMG-HomePage/3estrelasmeio.svg';
+import userImg from '../../../assets/IMG-HomePage/user.svg';
 
 const FeedbackSection = () => {
 const perfis = [ 
