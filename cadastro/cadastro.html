@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastrostyle.css">
+</head>
+<body>
+    <header className = "header">
+        <div className = "logo">DebugClub</div>
+        <nav className = "nav-links">
+          <a href='#ranking'>Ranking</a>
+          <a href='#dashboard'>Dashboard</a>
+          <a href='#repositorios'>Repositórios</a>
+        </nav>
+    </header>
+
+
+    <div class="flex">
+        <div class="cad_para_log">
+            <h2>Já tem conta?</h2>
+            <ul class="tab-group">
+                <li class="tab"><a href="#Login">Login</a></li>
+            </ul>
+        </div>
+
+        <div id="form_cadastro">   
+            <h1>Cadastro</h1>
+            
+            <form action="/" method="post">
+            
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <label>
+                            Nome<span class="req">*</span>
+                        </label>
+                        <input type="text" required autocomplete="off" />
+                    </div>
+                
+                    <div class="field-wrap">
+                        <label>
+                            Sobrenome<span class="req">*</span>
+                        </label>
+                        <input type="text" required autocomplete="off"/>
+                    </div>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Email<span class="req">*</span>
+                    </label>
+                    <input type="email" required autocomplete="off"/>
+                </div>
+                
+                <div class="field-wrap">
+                    <label>
+                        Defina uma senha<span class="req">*</span>
+                    </label>
+                    <input type="password" required autocomplete="off"/>
+                </div>
+                
+                <button type="submit" class="button button-block"/>Começar</button>
+            
+            </form>
+
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+    <script type="module" src="cadastroscript.js"></script>
+</body>
+</html>
