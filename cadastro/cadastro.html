@@ -4,72 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="cadastrostyle.css">
-</head>
-<body>
-    <header className = "header">
-        <div className = "logo">DebugClub</div>
-        <nav className = "nav-links">
-          <a href='#ranking'>Ranking</a>
-          <a href='#dashboard'>Dashboard</a>
-          <a href='#repositorios'>Repositórios</a>
+    <link rel="stylesheet" href="/login/loginstyle.css">
+
+<body class="body">
+
+    <header class="header">
+        <img src="/imagem/DebugClub (1).png" alt="" class="logoimg">
+        <nav class="nav-links">
+            <a href="#ranking">Ranking</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#repositorios">Repositórios</a>
+            <a href="/login/login.html" class="entrar-registrar">Entrar | Registrar-se</a>
         </nav>
     </header>
 
-
-    <div class="flex">
-        <div class="cad_para_log">
-            <h2>Já tem conta?</h2>
-            <ul class="tab-group">
-                <li class="tab"><a href="#Login">Login</a></li>
-            </ul>
-        </div>
-
-        <div id="form_cadastro">   
-            <h1>Cadastro</h1>
-            
+    <main class="flex">
+        <div class="form">
             <form action="/" method="post">
-            
-                <div class="top-row">
-                    <div class="field-wrap">
-                        <label>
-                            Nome<span class="req">*</span>
-                        </label>
-                        <input type="text" required autocomplete="off" />
+                <div class="caixa">
+                    <h1 class="textologin">Inscreva-se</h1>
+                    <div class="email">
+                        <input type="email" placeholder="E-mail" required>
                     </div>
-                
-                    <div class="field-wrap">
-                        <label>
-                            Sobrenome<span class="req">*</span>
-                        </label>
-                        <input type="text" required autocomplete="off"/>
+
+                    <div class="senha">
+                        <input type="password" placeholder="Senha" required>
+                    </div>
+
+                    <div class="confirmar-senha">
+                        <input type="password" placeholder="Confirmar Senha" required>
                     </div>
                 </div>
 
-                <div class="field-wrap">
-                    <label>
-                        Email<span class="req">*</span>
-                    </label>
-                    <input type="email" required autocomplete="off"/>
+                <div class="entrar">
+                    <p>Já tem uma conta? <a href="/login/login.html" class="criar">Entrar</a></p>
+                    <input type="submit" value="Cadastrar">
                 </div>
-                
-                <div class="field-wrap">
-                    <label>
-                        Defina uma senha<span class="req">*</span>
-                    </label>
-                    <input type="password" required autocomplete="off"/>
-                </div>
-                
-                <button type="submit" class="button button-block"/>Começar</button>
-            
             </form>
-
         </div>
-    </div>
+    </main>
 
     <footer>
-
     </footer>
-    <script type="module" src="cadastroscript.js"></script>
+
+    <script type="module" src="loginscript.js"></script>
 </body>
 </html>
