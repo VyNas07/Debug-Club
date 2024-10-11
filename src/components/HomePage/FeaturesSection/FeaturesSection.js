@@ -8,7 +8,7 @@ import githubIcon from '../../../assets/IMG-HomePage/github.png';
 const features = [
   {
     titulo: "Adquira Pontos e Títulos",
-    descricao: "Ganhe pontos e títulos ao resolver bugs",
+    descricao: "Acumule pontos ao resolver novos bugs e avance rumo a novos títulos",
     icon: medalhaIcon,
   },
   {
@@ -18,12 +18,12 @@ const features = [
   },
   {
     titulo: "Acompanhe sua Evolução",
-    descricao: "Veja sua evolução em tempo real.",
+    descricao: "Acompanhe sua evolução em tempo real, cada passo leva a conquistas.",
     icon: graficoIcon,
   },
   {
     titulo: "Evolua no Ranking",
-    descricao: "Suba no ranking global de contribuições.",
+    descricao: "Aumente sua posição no ranking global de contribuições.",
     icon: trofeuIcon,
   },
 ]
