@@ -121,7 +121,7 @@ O **DebugClub** é um site colaborativo onde desenvolvedores podem compartilhar 
 
 Arthur
 Marcello Fernandes
-Vyktor Felipe
+[Vyktor Nascimento](https://github.com/VyNas07)
 Larissa Lima
 João Miguel
 João Rietra
