@@ -119,15 +119,16 @@ O **DebugClub** é um site colaborativo onde desenvolvedores podem compartilhar 
 
 ## Autores
 
-Arthur
-Marcello Fernandes
-[Vyktor Nascimento](https://github.com/VyNas07)
-Larissa Lima
-João Miguel
-João Rietra
-Hugo Ponciano
-Mariana Ferreira
-Lucas Lima
-Ivo Junior
+- [Arthur Lima](https://github.com/ArthurLima05)
+- [Marcello Fernandes](https://github.com/marcellofernandesads)
+- [Vyktor Nascimento](https://github.com/VyNas07)
+- [Larissa Lima](https://github.com/lalinhos)
+- [João Miguel](https://github.com/Joao-Miguel-F)
+- [João Rietra](https://github.com/jhrl)
+- [Hugo Ponciano](https://github.com/hugopponciano)
+- [Mariana Ferreira](https://github.com/mwndrly)
+- [Lucas Lima](https://github.com/lblima038)
+- [Ivo Junior](https://github.com/icaj)
+
 
 c49cfb927a36241c0f3da2fc0349137b293455cb
