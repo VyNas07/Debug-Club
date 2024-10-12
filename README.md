@@ -1,6 +1,3 @@
-HEAD
-HEAD
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -130,5 +127,32 @@ O **DebugClub** é um site colaborativo onde desenvolvedores podem compartilhar 
 - [Lucas Lima](https://github.com/lblima038)
 - [Ivo Junior](https://github.com/icaj)
 
+
+## Estrutura do Projeto
+
+O projeto está organizado da seguinte forma:
+
+```
+/debugclub
+├── /public
+│   ├── index.html
+│   └── ...
+├── /src
+│   ├── /components
+│   ├── /pages
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── package.json
+└── README.md
+```
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Contato
+
+Para mais informações, entre em contato com qualquer um dos autores ou abra uma issue no repositório.
 
 c49cfb927a36241c0f3da2fc0349137b293455cb
