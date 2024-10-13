@@ -1,0 +1,88 @@
+.ranking-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  .ranking-text {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .ranking-text h2 {
+    max-width: 10ch;
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: #4F83B6;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 5rem;
+  }
+  
+  .ranking-img {
+    margin-top: -4rem;
+    margin-right: 10rem;
+    flex: 1;
+    max-width: 35%;
+    height: auto;
+    border-radius: 12px;
+  }
+  
+  /* Responsividade para tablets e dispositivos de tamanho médio */
+  @media (max-width: 1024px) {
+    .ranking-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px;
+    }
+  
+    .ranking-text h2 {
+      max-width: 200ch;
+      padding-left: 0;
+    }
+  
+    .ranking-img {
+      max-width: 80%;
+      margin-right: 0;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .ranking-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  
+    .ranking-text h2 {
+    max-width: 200ch;
+    padding-left: 0;
+    }
+  
+    .ranking-img {
+      max-width: 90%;
+      margin-top: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .ranking-section {
+      padding: 5px;
+      margin-top: 10px;
+    }
+  
+    .ranking-text h2 {
+      max-width: 200ch;
+    }
+  
+    .ranking-img {
+      max-width: 100%;
+      margin-top: 15px;
+    }
+  }
+  

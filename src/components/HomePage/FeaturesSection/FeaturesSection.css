@@ -12,6 +12,7 @@
     margin-bottom: 60px;
 }
 
+
 .features-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -51,8 +52,8 @@
     .features-list {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        width: 90%; /* Limita a largura da lista de recursos */
-        margin: 0 auto; /* Centraliza a lista na tela */
+        width: 90%;
+        margin: 0 auto;
     }
 
     .feature-item p {
@@ -68,8 +69,8 @@
     .features-list {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
-        width: 90%; /* Limita a largura da lista de recursos */
-        margin: 0 auto; /* Centraliza a lista na tela */
+        width: 90%;
+        margin: 0 auto;
     }
 
     .feature-item p {
@@ -81,8 +82,8 @@
     .features-list {
         grid-template-columns: 1fr;
         gap: 15px;
-        width: 90%; /* Limita a largura da lista de recursos */
-        margin: 0 auto; /* Centraliza a lista na tela */
+        width: 90%;
+        margin: 0 auto;
     }
 
     .feature-item p {

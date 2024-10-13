@@ -1,0 +1,79 @@
+.rodape-section {
+    background-color: #4A90E2;
+    color: white;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .rodape-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .logo-img {
+    width: 25rem;
+    margin-right: 20px;
+  }
+  
+  .contato-rodape {
+    flex: 1;
+    text-align: start;
+    padding: 0 5rem 0 9rem;
+  }
+  
+  .contato-rodape h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .contato-rodape p {
+    font-size: 1.2rem;
+  }
+  
+  .icons-rodape {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .facebook-img, .instagram-img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .endereco-rodape {
+    flex: 1;
+    text-align: start;
+    padding-top: 3%;
+  }
+  
+  .endereco-rodape p {
+    margin: 5px 0;
+    font-size: 1.2rem;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .rodape-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .logo-img {
+      margin-bottom: 20px;
+    }
+  
+    .contato-rodape, .endereco-rodape {
+      margin-bottom: 20px;
+    }
+  }
+  
