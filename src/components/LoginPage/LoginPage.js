@@ -1,14 +1,15 @@
 import React from 'react'
 import './loginstyle.css'
 import Header from '../HomePage/Header/Header'
-import Main from './MainSection/Main'
-import Footer from '../HomePage/Rodape/Rodape'
+import MainLogin from './MainLogin/MainLogin'
+import Footer from '../HomePage/Footer/Footer'
+
 
 const LoginPage = () => {
   return (
     <div>
       <Header/>
-      <Main/>
+      <MainLogin/>
       <Footer/>
     </div>
   )

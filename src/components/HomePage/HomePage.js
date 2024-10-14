@@ -4,7 +4,7 @@ import HeroSection from './HeroSection/HeroSection';
 import FeaturesSection from './FeaturesSection/FeaturesSection';
 import RankingSection from './RankingSection/RankingSection';
 import FeedbackSection from './FeedbackSection/FeedbackSection';
-import Rodape from './Rodape/Rodape';
+import Rodape from './Footer/Footer';
 
 
 const HomePage = () => {
