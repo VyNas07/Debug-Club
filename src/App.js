@@ -3,6 +3,7 @@ import HomePage from './components/HomePage/HomePage';
 import LoginPage from './components/LoginPage/LoginPage';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RegistrationPage from './components/RegistrationPage/RegistrationPage';
 
 import {initializeApp} from 'firebase/app'
 import { collection, getFirestore, getDocs } from 'firebase/firestore';
@@ -40,6 +41,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/registration" element={<RegistrationPage />} />
       </Routes>
     </Router>
   );

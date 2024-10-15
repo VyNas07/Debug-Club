@@ -1,7 +1,8 @@
 import React from 'react';
-import './Main.css';
+import './MainLogin.css';
+import { Outlet, Link } from "react-router-dom";
 
-const Main = () => {
+const MainLogin = () => {
   return (
     <main className='flex'>
       <div className="form">
@@ -18,7 +19,11 @@ const Main = () => {
           </div>
 
           <div className="entrar">
-            <p>Ainda não tem conta? <a href="/cadastro/cadastro.html" className="criar">Criar</a></p>
+            <p>Ainda não tem conta?
+            <Link to = '/registration'>
+            <a href="/cadastro/cadastro.html" className="criar">Criar</a></Link>
+            </p>
+            
             <input type="submit" value="Entrar" />
           </div>
         </form>
@@ -27,4 +32,4 @@ const Main = () => {
   );
 }
 
-export default Main;
+export default MainLogin;
