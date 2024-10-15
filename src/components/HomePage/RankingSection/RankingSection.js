@@ -1,11 +1,13 @@
 import React from 'react'
 import './RankingSection.css'
-import RankingImg from '../../assets/Ranking.png'
+import RankingImg from '../../../assets/IMG-HomePage/Ranking.png'
 
 const RankingSection = () => {
   return (
     <section className = 'ranking-section'>
-        <h2>Ranking de Contribuições</h2>
+      <div className='ranking-text'>
+        <h2>Ranking <span>de</span> Contribuições</h2>
+        </div>
         <img src={RankingImg} alt = 'Imagem de Ranking' className='ranking-img'/>
     </section>
   );;

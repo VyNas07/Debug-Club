@@ -9,10 +9,8 @@
     
 }
 
-.header a {
+.a {
     color: #ffffff ;
-   
-
 }
 
 .logo img {
@@ -28,10 +26,11 @@
   
   .nav-links a {
     margin: 0px 15px; 
-
     font-weight: 500;
     transition: transform 0.3s ease;
   }
+
+
   
   .nav-links a:hover {
     transform: scale(1.1);
@@ -129,7 +128,6 @@
         padding: 12px 20px;
         width: 100%;
         text-align: center;
-        background-color: #3b75b4;
     }
 
     .button-login {

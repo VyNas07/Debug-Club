@@ -1,27 +1,20 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import HeroSection from './components/HeroSection/HeroSection';
-import FeaturesSection from './components/FeaturesSection/FeaturesSection';
+import HomePage from './components/HomePage/HomePage';
+import LoginPage from './components/LoginPage/LoginPage';
 import './App.css';
-import RankingSection from './components/RankingSection/RankingSection';
-import FeedbackSection from './components/FeedbackSection/FeedbackSection';
-import Rodape from './components/Rodape/Rodape';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RegistrationPage from './components/RegistrationPage/RegistrationPage';
 
 function App() {
   return (
-    <div className = "App">
-      <Header/>
-      <HeroSection/>
-      <FeaturesSection/>
-      <RankingSection/>
-      <FeedbackSection/>
-      <Rodape/>
-    </div>
+<Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/registration" element={<RegistrationPage />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
-
-
-
-

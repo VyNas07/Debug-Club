@@ -121,11 +121,12 @@
     }
 
     .hero-section h1 {
-        font-size: 1.8rem;
-        margin-top: 20px;
+        font-size: 1.9rem;
+        margin-top: 15px;
     }
 
     .hero-section p {
-        font-size: 0.9rem;
+        font-size: 1.15rem;
     }
 }
+
