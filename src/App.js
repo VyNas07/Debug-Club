@@ -19,12 +19,16 @@ const firebaseApp = initializeApp({
 });
 
 function App() {
-  const [name, setName] = useState("");
+  const [senha, setSenha] = useState("");
   const [email, setEmail] = useState("");
   const [users, setUsers] = useState([]);
 
   const db = getFirestore(firebaseApp);
   const userCollectionRef = collection(db, "users")
+
+  function criarUser() {
+    console.log({email, senha});
+  }
 
   useEffect(() => {
     const getUsers = async () => {
@@ -32,7 +36,6 @@ function App() {
       setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     }
     getUsers();
-    //PAREI PQ PRECISO QUE ARTHUR TERMINE DE COLOCAR A PÁGINA  DE CADASTRO. EU PRECISO LINKAR ESSE CÓDIGO COM O CADASTRO PARA SER ENVIADO PRO BANCO DE DADOS
 
   },[])
 
