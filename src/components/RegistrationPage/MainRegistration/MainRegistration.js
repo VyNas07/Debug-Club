@@ -3,7 +3,7 @@ import './MainRegistration.css';
 import {initializeApp} from 'firebase/app'
 import { Outlet, Link } from "react-router-dom";
 import logoGitHub from '../../../assets/IMG-RegistrationPage/githubazul.png';
-import {App, firebaseApp} from '../../../App';
+import App, { firebaseApp } from '../../../App';
 
 const MainRegistration = () => {
 	let app = App();
