@@ -50,7 +50,8 @@ function App() {
 	);
 }
 
-App.firebaseApp = firebaseApp;
+// Export firebaseApp separately
+export { firebaseApp };
 
 
 export default App;

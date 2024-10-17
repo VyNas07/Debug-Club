@@ -3,11 +3,11 @@ import Header from '../HomePage/Header/Header'
 import MainRegistration from '../RegistrationPage/MainRegistration/MainRegistration'
 import Footer from '../HomePage/Footer/Footer'
 
-const RegistrationPage = () => {
+const RegistrationPage = ({ setSenha, setEmail }) => {
   return (
     <div>
     <Header/>
-    <MainRegistration/>
+    <MainRegistration setSenha={setSenha} setEmail={setEmail} />    
     <Footer/>
     </div>
 
@@ -16,3 +16,5 @@ const RegistrationPage = () => {
 }
 
 export default RegistrationPage
+
+//
