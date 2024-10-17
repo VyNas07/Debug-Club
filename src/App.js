@@ -7,16 +7,19 @@ import RegistrationPage from './components/RegistrationPage/RegistrationPage';
 
 import {initializeApp} from 'firebase/app'
 import { collection, getFirestore, getDocs } from 'firebase/firestore';
+import { AppProvider } from './AppContext';
 
-const firebaseApp = initializeApp({
-	apiKey: "AIzaSyBF0rmKT8uJJLJ4_a0tJzGaKOG0hIYOvy8",
+const firebaseConfig = {
+    apiKey: "AIzaSyBF0rmKT8uJJLJ4_a0tJzGaKOG0hIYOvy8",
 	authDomain: "debug-club.firebaseapp.com",
 	projectId: "debug-club",
 	storageBucket: "debug-club.appspot.com",
 	messagingSenderId: "377935123161",
 	appId: "1:377935123161:web:2c93b065b1c45b1fc3a4c8",
 	measurementId: "G-N17LCLESNJ"
-});
+}
+
+const firebaseApp = initializeApp(firebaseConfig);
 
 function App() {
 	const [senha, setSenha] = useState("");
@@ -40,6 +43,7 @@ function App() {
 	},[])
 
 	return (
+        <AppProvider>
 		<Router>
 			<Routes>
 				<Route path="/" element={<HomePage />} />
@@ -47,6 +51,7 @@ function App() {
 				<Route path="/registration" element={<RegistrationPage />} />
 			</Routes>
 		</Router>
+        </AppProvider>
 	);
 }
 
