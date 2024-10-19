@@ -27,7 +27,7 @@ const MainRegistration = () => {
 
             <div className="entrar">
                 <p>Já tem uma conta? 
-                    <Link to = '/login'><a href="/login/login.html" className="criar">Entrar</a></Link></p>
+                    <Link to = '/login'><a href="/login/login.html" className="criar"> Entrar</a></Link></p>
                 <input type="submit" value="Cadastrar" />
             </div>
         </form>
