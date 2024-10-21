@@ -1,14 +1,17 @@
 import React from 'react';
-import './ErrorPage.css'; // Importação do CSS para a estilização da página
+import './MainErrorPage/MainErrorPage';
+import Header from '../HomePage/Header/Header';
+import Rodape from '../HomePage/Footer/Footer';
+import MainErrorPage from './MainErrorPage/MainErrorPage';
+
 
 const ErrorPage = () => {
   return (
-    <div className="error-page">
-      <h1>404</h1>
-      <h2>Página não encontrada</h2>
-      <p>Desculpe, a página que você está procurando não existe.</p>
-      <p>Pode ter sido removida, alterada ou está temporariamente indisponível.</p>
-    </div>
+<div>
+  <Header/>
+  <MainErrorPage/>
+  <Rodape/>
+</div>
   );
 };
 

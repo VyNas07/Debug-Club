@@ -21,9 +21,15 @@
     
 }
 .logoGitHub {
-    width: 3.5rem;
+    width: 3.3rem;
     justify-content: center;
     margin-top: 7rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.logoGitHub:hover {
+    transform: scale(1.1);
+
 }
 .container-logo {
     height: 7rem;
