@@ -21,7 +21,7 @@ const MainLogin = () => {
           <div className="entrar">
             <p>Ainda não tem conta?
             <Link to = '/registration'>
-            <a href="/cadastro/cadastro.html" className="criar">Criar</a></Link>
+            <a href="/cadastro/cadastro.html" className="criar"> Criar</a></Link>
             </p>
             
             <input type="submit" value="Entrar" />

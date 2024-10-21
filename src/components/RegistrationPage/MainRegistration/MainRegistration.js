@@ -12,7 +12,7 @@ const MainRegistration = () => {
             .then((result) => {
                 const user = result.user;
                 const token = result.credential.accessToken;
-                console.log('Usuario logado: ', user);
+                console.log('Usuário logado: ', user);
                 console.log('Token de Acesso: ', token);
             })
             .catch((error) => {
@@ -46,7 +46,8 @@ const MainRegistration = () => {
                     </div>
                     <div className="entrar">
                         <p>Já tem uma conta?
-                            <Link to='/login'><a href="/login/login.html" className="criar">Entrar</a></Link></p>
+                            <Link to='/login' className="criar">Entrar</Link>
+                        </p>
                         <input type="submit" value="Cadastrar" />
                     </div>
                 </form>
