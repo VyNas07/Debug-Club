@@ -59,7 +59,7 @@
     margin-top: 8%;
 }
 
-.entrar input {
+.entrar button {
     cursor: pointer;
     width: 120px;
     height: 40px;
@@ -87,7 +87,7 @@ input:focus {
     color: #4a90e2;
 }
 
-.nav-links .entrar-registrar {
+.nav-links .entrar-registrar  {
     cursor: pointer;
     width: auto;
     height: auto;

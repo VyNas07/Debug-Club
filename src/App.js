@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RegistrationPage from './components/RegistrationPage/RegistrationPage';
 
 import {initializeApp} from 'firebase/app'
-import { collection, getFirestore, getDocs } from 'firebase/firestore';
+import { collection, getFirestore, getDocs, addDoc } from 'firebase/firestore';
 import { AppProvider } from './AppContext';
 
 const firebaseConfig = {
@@ -22,37 +22,58 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 
 function App() {
-	const [senha, setSenha] = useState("");
-	const [email, setEmail] = useState("");
-	const [users, setUsers] = useState([]);
+    const [senha, setSenha] = useState("");
+    const [email, setEmail] = useState("");
+    const [users, setUsers] = useState([]);
 
-	const db = getFirestore(firebaseApp);
-	const userCollectionRef = collection(db, "users");
+    const db = getFirestore(firebaseApp);
+    const userCollectionRef = collection(db, "users");
 
+    async function criarUser (e){
+        e.preventDefault();
+        try {
+            await addDoc(userCollectionRef, { email, senha });
+            console.log("Usuário criado com sucesso!");
+        } catch (error) {
+            console.error("Erro ao criar usuário: ", error);
+        }
+    };
+    this.criarUser = criarUser;
 
-	function criarUser() {
-		console.log({email, senha});
-	}
+    useEffect(() => {
+        const getUsers = async () => {
+            const data = await getDocs(userCollectionRef);
+            setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        };
+        getUsers();
+    }, [userCollectionRef]);
 
-	useEffect(() => {
-		const getUsers = async () => {
-			const data = await getDocs(userCollectionRef);
-			setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-		}
-		getUsers();
-	},[])
-
-	return (
-        <AppProvider>
-		<Router>
-			<Routes>
-				<Route path="/" element={<HomePage />} />
-				<Route path="/login" element={<LoginPage />} />
-				<Route path="/registration" element={<RegistrationPage />} />
-			</Routes>
-		</Router>
-        </AppProvider>
-	);
+    return (
+        <App.Provider value={{ email, setEmail, senha, setSenha, criarUser }}>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/registration" element={<RegistrationPage />} />
+                </Routes>
+            </Router>
+            <form onSubmit={this.criarUser}>
+                <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                    type="password"
+                    placeholder="Senha"
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
+                />
+                <button type="submit">Criar Usuário</button>
+            </form>
+        </App.Provider>
+    );
 }
 
 export default App;
