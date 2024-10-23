@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import logoDebugClub from '../../../assets/IMG-HomePage/DebugClub.svg';
+import logoDebugClub from '../../assets/IMG-HomePage/DebugClub.svg';
 import { Outlet, Link } from "react-router-dom";
 
 

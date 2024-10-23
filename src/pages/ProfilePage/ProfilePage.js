@@ -3,8 +3,8 @@ import './ProfilePage.css';
 import profileIcon from '../../assets/IMG-ProfilePage/profileimg.png';
 import iconeEdit from '../../assets/IMG-ProfilePage/iconeeditar.png';
 import iconeGithub from '../../assets/IMG-ProfilePage/github.png';
-import Header from '../HomePage/Header/Header';
-import Rodape from '../HomePage/Footer/Footer';
+import Header from '../../components/Header/Header';
+import Rodape from '../../components/Footer/Footer';
 
 
 const Profile = () => {

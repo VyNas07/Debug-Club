@@ -1,7 +1,7 @@
 import React from 'react';
-import logoDebugClub from '../../../assets/IMG-HomePage/DebugClub.svg';
-import facebookLogo from '../../../assets/IMG-HomePage/facebook.png';
-import instagramLogo from '../../../assets/IMG-HomePage/instagram.png';
+import logoDebugClub from '../../assets/IMG-HomePage/DebugClub.svg';
+import facebookLogo from '../../assets/IMG-HomePage/facebook.png';
+import instagramLogo from '../../assets/IMG-HomePage/instagram.png';
 import './Footer.css';
 
 

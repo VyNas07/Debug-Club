@@ -46,7 +46,7 @@
 }
 
 
-.email input, 
+.nome input, 
 .senha input {
     border-radius: 5px;
     width: 100%;
@@ -140,7 +140,7 @@ input:focus {
         width: 70%;
     }
 
-    .email input, 
+    .nome input, 
     .senha input {
         width: 90%;
     }

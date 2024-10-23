@@ -1,11 +1,11 @@
 import React from 'react';
-import HomePage from './components/HomePage/HomePage';
-import LoginPage from './components/LoginPage/LoginPage';
+import HomePage from './pages/HomePage/HomePage';
+import LoginPage from './pages/LoginPage/LoginPage';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import RegistrationPage from './components/RegistrationPage/RegistrationPage';
-import ProfilePage from './components/ProfilePage/ProfilePage';
-import ErrorPage from './components/ErrorPage/ErrorPage';
+import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 function App() {
   return (

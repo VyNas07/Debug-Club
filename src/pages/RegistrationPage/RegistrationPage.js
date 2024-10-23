@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from '../HomePage/Header/Header'
-import MainRegistration from '../RegistrationPage/MainRegistration/MainRegistration'
-import Footer from '../HomePage/Footer/Footer'
+import Header from '../../components/Header/Header'
+import MainRegistration from './MainRegistration/MainRegistration'
+import Footer from '../../components/Footer/Footer'
 
 const RegistrationPage = () => {
   return (
