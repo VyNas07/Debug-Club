@@ -4,6 +4,7 @@ import profileIcon from '../../assets/IMG-ProfilePage/profileimg.png';
 import iconeEdit from '../../assets/IMG-ProfilePage/iconeeditar.png';
 import iconeGithub from '../../assets/IMG-ProfilePage/github.png';
 import Header from '../HomePage/Header/Header';
+import Rodape from '../HomePage/Footer/Footer';
 
 
 const Profile = () => {
@@ -113,7 +114,9 @@ const Profile = () => {
         </div>
       </main>
     </div>
+    <Rodape/>
     </div>
+
   );
 };
 

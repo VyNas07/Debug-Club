@@ -16,6 +16,7 @@ function App() {
         <Route path="/registration" element={<RegistrationPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element = {<ErrorPage />} />
+x
       </Routes>
     </Router>
   );

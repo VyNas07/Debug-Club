@@ -3,13 +3,13 @@ import { getAnalytics } from 'firebase/analytics';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAFCHKdFcMEJ-8Hq-MiSkGGZa49ZnIaclE',
-  authDomain: 'debugclub-b32bb.firebaseapp.com',
-  projectId: 'debugclub-b32bb',
-  storageBucket: 'debugclub-b32bb.appspot.com',
-  messagingSenderId: '87830476368',
-  appId: '1:87830476368:web:36370b1f66fdfca722c355',
-  measurementId: 'G-MR74YYK7Z7'
+  apiKey: "AIzaSyBF0rmKT8uJJLJ4_a0tJzGaKOG0hIYOvy8",
+  authDomain: "debug-club.firebaseapp.com",
+  projectId: "debug-club",
+  storageBucket: "debug-club.appspot.com",
+  messagingSenderId: "377935123161",
+  appId: "1:377935123161:web:2c93b065b1c45b1fc3a4c8",
+  measurementId: "G-N17LCLESNJ"
 };
 
 const app = initializeApp(firebaseConfig);
