@@ -5,6 +5,29 @@
     background-repeat: no-repeat;
     font-family: "Montserrat", sans-serif;
 }
+.input-field {
+    width: 100%;
+    max-width: 300px; /* Tamanho fixo */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .confirmation-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  
 
 .flex {
     background-color: white;
