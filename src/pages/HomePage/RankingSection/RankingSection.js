@@ -6,7 +6,7 @@ const RankingSection = () => {
   return (
     <section className = 'ranking-section'>
       <div className='ranking-text'>
-        <h2>Ranking <span>de</span> Contribuições</h2>
+        <h2>Ranking de Contribuições</h2>
         </div>
         <img src={RankingImg} alt = 'Imagem de Ranking' className='ranking-img'/>
     </section>
