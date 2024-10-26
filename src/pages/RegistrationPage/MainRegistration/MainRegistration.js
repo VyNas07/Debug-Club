@@ -1,5 +1,5 @@
-import React, { useState } from 'react'; // 'useState' com "S" maiúsculo
-import { auth, db } from '../../../firebase'; 
+import React, { useState } from 'react';
+import { auth, db } from '../../../firebase';
 import { GithubAuthProvider, signInWithPopup } from 'firebase/auth';
 import { setDoc, doc, getDoc, query, collection, where, getDocs } from 'firebase/firestore';
 import './MainRegistration.css';
@@ -17,17 +17,15 @@ const MainRegistration = () => {
     const handleGitHubLogin = () => {
         const provider = new GithubAuthProvider();
         signInWithPopup(auth, provider)
-            .then(async (result) => {
-                const user = result.user;
-                const token = result.credential.accessToken;
-
-                navigate('/registration'); //
+            .then(async () => {
+                navigate('/registration');
             })
             .catch((error) => {
                 console.error('Erro no login com GitHub: ', error);
+                setErrorMessage('Erro no login com GitHub. Por favor, tente novamente mais tarde.');
             });
     };
-    
+
     const validateName = (name) => {
         return name.length >= 5 && name.length <= 20;
     };
@@ -39,35 +37,38 @@ const MainRegistration = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setErrorMessage(''); // Limpa mensagem de erro anterior
 
         if (!validateName(name)) {
-            alert('O nome deve ter no mínimo 5 caracteres e no máximo 20.');
+            setErrorMessage('O nome deve ter no mínimo 5 caracteres e no máximo 20.');
             return;
         }
-
         if (!validatePassword(password)) {
-            alert('A senha deve ter no mínimo 6 caracteres, uma letra maiúscula e um número.');
+            setErrorMessage('A senha deve ter no mínimo 6 caracteres, uma letra maiúscula e um número.');
             return;
         }
         if (password !== confirmPassword) {
-            alert('As senhas não coincidem.');
+            setErrorMessage('As senhas não coincidem.');
             return;
         }
 
         try {
             const nameQuery = query(collection(db, 'users'), where('name', '==', name));
             const nameQuerySnapshot = await getDocs(nameQuery);
-
             if (!nameQuerySnapshot.empty) {
-                alert('Este nome já está em uso.');
+                setErrorMessage('Este nome já está em uso.');
                 return;
             }
 
             const user = auth.currentUser;
-            const userDoc = await getDoc(doc(db, 'users', user.uid));
+            if (!user) {
+                setErrorMessage('Conexão com o GitHub não encontrada. Por favor, tente autenticar-se novamente.');
+                return;
+            }
 
+            const userDoc = await getDoc(doc(db, 'users', user.uid));
             if (userDoc.exists()) {
-                alert('Você já possui uma conta com este GitHub.');
+                setErrorMessage('Você já possui uma conta com este GitHub.');
                 return;
             }
 
@@ -76,15 +77,15 @@ const MainRegistration = () => {
                 password,
                 github: user.providerData[0].displayName
             });
-
-            console.log('Usuário registrado com sucesso!');
             setConfirmationMessage('Cadastro realizado com sucesso!');
             setName('');
             setPassword('');
             setConfirmPassword('');
             setErrorMessage('');
+
         } catch (error) {
             console.error('Erro ao registrar usuário:', error);
+            setErrorMessage('Erro ao registrar usuário. Por favor, tente novamente mais tarde.');
         }
     };
 
@@ -104,6 +105,7 @@ const MainRegistration = () => {
                         <h1 className="textologin">Inscreva-se</h1>
                         <div className="nome">
                             <input 
+                                className="input-field"
                                 type="text" 
                                 placeholder="Nome" 
                                 required 
@@ -113,6 +115,7 @@ const MainRegistration = () => {
                         </div>
                         <div className="senha">
                             <input 
+                                className="input-field"
                                 type="password" 
                                 placeholder="Senha" 
                                 required 
@@ -121,7 +124,8 @@ const MainRegistration = () => {
                             />
                         </div>
                         <div className="confirmar-senha">
-                        <input 
+                            <input 
+                                className="input-field"
                                 type="password" 
                                 placeholder="Confirmar Senha" 
                                 required 
@@ -130,14 +134,14 @@ const MainRegistration = () => {
                             />
                         </div>
                     </div>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
+                    {confirmationMessage && <p className="confirmation-message">{confirmationMessage}</p>}
                     <div className="entrar">
                         <p>Já tem uma conta?
                             <Link to='/login' className="criar">Entrar</Link>
                         </p>
                         <input type="submit" value="Cadastrar" />
                     </div>
-                    {errorMessage && <p className="error-message">{errorMessage}</p>}
-                    {confirmationMessage && <p className="confirmation-message">{confirmationMessage}</p>}
                 </form>
             </div>
         </main>

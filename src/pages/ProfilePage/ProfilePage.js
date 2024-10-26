@@ -5,6 +5,7 @@ import iconeEdit from '../../assets/IMG-ProfilePage/iconeeditar.png';
 import iconeGithub from '../../assets/IMG-ProfilePage/github.png';
 import Header from '../../components/Header/Header';
 import Rodape from '../../components/Footer/Footer';
+import Header2 from '../../components/Header2/Header2';
 
 
 const Profile = () => {
@@ -21,7 +22,7 @@ const Profile = () => {
 
   return (
     <div>
-       <Header /> {Header}
+       <Header2 /> {Header}
     <div className="container">
       <div className="profile-card">
         <button className="edit-button">
