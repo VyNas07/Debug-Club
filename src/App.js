@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import ProfileEdit from './pages/ProfileEdit/ProfileEdit';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path="/registration" element={<RegistrationPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element = {<ErrorPage />} />
-x
+        <Route path="/profileedit" element = {<ProfileEdit />} />
       </Routes>
     </Router>
   );
