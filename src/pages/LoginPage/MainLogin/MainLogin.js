@@ -53,7 +53,7 @@ const MainLogin = () => {
       <div className="form">
         <form onSubmit={handleSubmit}>
           <div className="caixa">
-            <h1 className="textologin">Login</h1>
+            <h1 className="text-login">Login</h1>
             <div className="nome">
               <input 
                 type="text" 
