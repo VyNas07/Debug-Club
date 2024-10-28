@@ -5,6 +5,8 @@ import iconeEdit from '../../assets/IMG-ProfilePage/iconeeditar.png';
 import iconeGithub from '../../assets/IMG-ProfilePage/github.png';
 import Header from '../../components/Header/Header';
 import Rodape from '../../components/Footer/Footer';
+import Header2 from '../../components/Header2/Header2';
+import { Link } from "react-router-dom";
 
 
 const Profile = () => {
@@ -21,13 +23,15 @@ const Profile = () => {
 
   return (
     <div>
-       <Header /> {Header}
+       <Header2 /> {Header}
     <div className="container">
       <div className="profile-card">
+      <Link to = '/profileedit'>
         <button className="edit-button">
           <img src={iconeEdit} alt="botão editar" />
         </button>
-        <div className="profile-image">
+        </Link>
+        <div className="profile-img">  
           <img src={profileIcon} alt="Profile" />
         </div>
         <div className="profile-info">
