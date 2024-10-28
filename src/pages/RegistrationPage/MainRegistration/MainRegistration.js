@@ -88,17 +88,19 @@ const MainRegistration = () => {
   return (
     <main className="flex">
       <div className="form">
-        <div className='container-logo'>
-          <img
+        
+        <form onSubmit={handleSubmit}>
+          <div className="caixa">
+            <h1 className="textologin">Inscreva-se</h1>
+            <div className='container-logo'>
+              <p className="login-github">Cadastrar GitHub:</p>
+            <img
             src={logoGitHub}
             alt='LogoGitHub'
             className='logoGitHub'
             onClick={handleGitHubLogin}
-          />
-        </div>
-        <form onSubmit={handleSubmit}>
-          <div className="caixa">
-            <h1 className="textologin">Inscreva-se</h1>
+            />
+           </div>
             <div className="nome">
               <input 
                 className="input-field"

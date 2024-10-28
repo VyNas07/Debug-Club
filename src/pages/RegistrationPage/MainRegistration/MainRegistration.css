@@ -55,7 +55,16 @@
 
 }
 .container-logo {
-    height: 7rem;
+    position: relative;
+    top: -2rem;
+}
+
+.login-github{
+    color: #4F83B6;
+    margin-top: 50px;
+    position: relative;
+    top: 7rem;
+    margin-top: 0;
 }
 .form {
     text-align: center;
@@ -66,6 +75,8 @@
     color: #4F83B6;
     margin-bottom: 10%;
     text-align: center;
+    position: relative;
+    top: 5rem;
 }
 
 
