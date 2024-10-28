@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProfilePage.css';
 import profileIcon from '../../assets/IMG-ProfilePage/profileimg.png';
 import iconeEdit from '../../assets/IMG-ProfilePage/iconeeditar.png';
@@ -7,9 +7,37 @@ import Header from '../../components/Header/Header';
 import Rodape from '../../components/Footer/Footer';
 import Header2 from '../../components/Header2/Header2';
 import { Link } from "react-router-dom";
+import { auth, db } from '../../firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 
 const Profile = () => {
+  const [profile, setProfile] = useState({
+    name: "",
+    profession: "",
+    bio: "",
+    profilePicture: ""
+  });
+
+  const fetchUserProfile = async () => {
+    const userId = auth.currentUser.uid;
+    const userDocRef = doc(db, 'users', userId);
+    const userDoc = await getDoc(userDocRef);
+
+    if (userDoc.exists()) {
+      const userData = userDoc.data();
+      setProfile({
+        name: userData.name || "",
+        profession: userData.profession || "",
+        bio: userData.bio || "",
+        profilePicture: userData.profilePicture || profileIcon
+      });
+    }
+  };
+
+  useEffect(() => {
+    fetchUserProfile();
+  }, []);
   const getStatusColor = (status) => {
     switch (status) {
       case 'Aberta':
@@ -32,18 +60,15 @@ const Profile = () => {
         </button>
         </Link>
         <div className="profile-img">  
-          <img src={profileIcon} alt="Profile" />
+          <img src={profile.profilePicture} alt="Profile" />
         </div>
         <div className="profile-info">
-          <h1>Diego Souza</h1>
-          <p>Desenvolvedor FrontEnd</p>
+          <h1 className='perfilname'>{profile.name}</h1>
+          <p className='profession'>
+            {profile.profession ? profile.profession : "Profissão não informada"}</p>
           <h3 className="classe">Explorador de Bugs</h3>
-          <p>
-            "Sou apaixonado por programação e sempre em busca de novos desafios
-            que me ajudem a crescer como desenvolvedor. Gosto de resolver
-            problemas complexos e contribuir para projetos de código aberto.
-            Estou aqui para transformar bugs em soluções eficazes e colaborar
-            com a comunidade em busca de melhorias contínuas."
+          <p className={profile.bio ? 'bio' : 'bio centered-bio'}>
+            {profile.bio ? profile.bio : "*Nenhuma Biografia Registrada*"}
           </p>
         </div>
       </div>
@@ -112,7 +137,6 @@ const Profile = () => {
                   </span>
                 </div>
               </li>
-              {/* pode adicionar outros itens de contribuição aqui */}
             </ul>
           </div>
         </div>

@@ -1,5 +1,3 @@
-// src/services/authService.js
-
 import { auth, db } from '../firebase';
 import { GithubAuthProvider, signInWithPopup } from 'firebase/auth';
 import { setDoc, doc, getDoc, query, collection, where, getDocs } from 'firebase/firestore';

@@ -1,111 +1,116 @@
 .profile-edit-page {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 6%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 6%;
+}
 
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #4F83B6;
-  }
-  
-  .edit-form .form-group {
-    margin-bottom: 15px;   
-    text-align: center;
-  }
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4F83B6;
+}
 
-  .edit-form .form-group input {
-    text-align: center;
+.edit-form .form-group {
+  margin-bottom: 15px;   
+  text-align: center;
+}
 
-  }
-  
-  .edit-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    text-align: left;
-    color: #4F83B6;
-    margin-left: 20%;
+.edit-form .form-group input {
+  text-align: center;
+}
 
-  }
+.edit-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #4F83B6;
+  margin-left: 20%;
+}
 
-  .edit-form label.custom-file-upload{
-    font-weight: normal;
-    font-size: 14px;
-  }
-  
-  
-  .edit-form input[type="text"],
-  .edit-form input[type="email"],
-  .edit-form textarea {
-    width: 60%;
-    padding: 10px;
-    border: 1px solid #b6b6b6;
-    border-radius: 5px;
-    font-size: 16px;
-    
-  }
-  
-  .edit-form input[type="file"] {
-    display: block;
-    margin-bottom: 10px;
-  }
+.edit-form label.custom-file-upload{
+  font-weight: normal;
+  font-size: 14px;
+}
 
-  
-  .image-preview img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 10px;
-    display: flex;
-    margin-left: 30%;
-    margin-bottom: 15px;
-  }
+.edit-form input[type="text"],
+.edit-form input[type="email"],
+.edit-form textarea {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #b6b6b6;
+  border-radius: 5px;
+  font-size: 16px;
+}
 
-  .remove-button{
-   background: none;
-   border: none;
-   color: #4F83B6;
-   font-size: 14px;
-   cursor: pointer;
-  }
+.edit-form input[type="file"] {
+  display: block;
+  margin-bottom: 10px;
+}
 
-  .custom-file-upload{
-    font-size: 14px;
-    text-decoration: none;
-    
-  }
-  
-  .save-button {
-    cursor: pointer;
-    width: 120px;
-    height: 40px;
-    border-radius: 20px;
-    border: none;
-    background-color: #4F83B6;
-    color: white;
-    margin-top: 10%;
-    display: block;
-    margin: 20px auto;
-  }
+.image-preview img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+  display: flex;
+  margin-left: 30%;
+  margin-bottom: 15px;
+}
 
+.remove-button{
+ background: none;
+ border: none;
+ color: #4F83B6;
+ font-size: 14px;
+ cursor: pointer;
+}
 
-  .custom-file-upload {
-    cursor: pointer;
-  }
+.custom-file-upload {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.save-button {
+  cursor: pointer;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: #4F83B6;
+  color: white;
+  margin-top: 10%;
+  display: block;
+  margin: 20px auto;
+}
+
+.custom-file-upload {
+  cursor: pointer;
+}
 
 textarea {
-    resize: none;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
+  resize: none;
+  font-family: 'Montserrat', sans-serif;
+}
 
+/* Nova classe para o botão "Escolher foto" */
+.choose-photo-button {
+  display: inline-block; /* Para centralizar */
+  padding: 10px 20px; /* Espaçamento interno do botão */
+  border-radius: 25px; /* Bordas arredondadas */
+  background-color: #4a90e2; /* Cor de fundo */
+  color: #def7fa; /* Cor do texto */
+  text-align: center; /* Centraliza o texto dentro do botão */
+  cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+  transition: transform 0.2s; /* Adiciona uma transição suave ao efeito de transformação */
+}
 
-  
+/* Efeito de transformação ao passar o mouse sobre o botão */
+.choose-photo-button:hover {
+  transform: scale(1.05); /* Aumenta o botão quando o mouse passa sobre ele */
+}

@@ -34,15 +34,14 @@ const MainLogin = () => {
         return;
       }
 
-      // Supondo que você tenha o token do GitHub armazenado no Firestore
-      const githubToken = userDoc.data().githubToken; // Ajuste conforme necessário
-      const githubUsername = name; // Ou ajuste conforme necessário
+      const githubToken = userDoc.data().githubToken; 
+      const githubUsername = name; 
 
       // Integração do GitHub
       await integrateGithubIssues(githubUsername, userDoc.id, githubToken);
 
       // Login bem-sucedido
-      navigate('/dashboard'); // Redireciona para a página do dashboard após login bem-sucedido
+      navigate('/profile'); 
     } catch (error) {
       setErrorMessage('Erro ao fazer login.');
       console.error('Erro ao fazer login:', error);

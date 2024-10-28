@@ -79,7 +79,7 @@ const MainRegistration = () => {
       setPassword('');
       setConfirmPassword('');
       setErrorMessage('');
-      navigate('/profile'); // Redireciona para a página de perfil após cadastro bem-sucedido
+      navigate('/profileedit'); // Redireciona para a página de perfil após cadastro bem-sucedido
     } catch (error) {
       setErrorMessage(error.message);
     }

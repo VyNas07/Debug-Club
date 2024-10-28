@@ -9,14 +9,7 @@
     background-color: #f5f5f5;
   }
   
-  .header {
-    background-color: #4172f5;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 30px;
-  }
-  
+
   .header .logo {
     font-weight: bold;
   }
