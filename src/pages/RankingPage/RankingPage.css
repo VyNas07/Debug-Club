@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  .header {
+    background-color: #4172f5;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+  }
+  
+  .header .logo {
+    font-weight: bold;
+  }
+  
+  .header .menu a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .ranking-page {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  .content {
+    display: flex;
+    
+  }
+  
+  .top-three {
+    background-color: #4F83B6;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 30px;
+    padding: 20px;
+    width: 380px;
+    height: 425px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;   
+    position: relative;
+}
+
+  .second-card, .third-card, .winner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    background-color: #6B8BBD;
+    border: 2px solid #6B8BBD;
+    width: 33,3%;
+    padding-top: 20px   ;
+  }
+  
+  .second-card .name, .third-card .name, .winner-card .name {
+    font-size: 16px;
+    font-weight: bold;
+    color:  #6B8BBD;
+  }
+  
+  .second-card .score, .third-card .score, .winner-card .score {
+    font-size: 24px;
+    color: #4F83B6;
+    font-weight: 500;
+
+  }
+  
+  .winner-card {
+    font-size: 50px;
+    background-color: #DEF7FA;
+    border-radius: 10px;
+    height: 60%;
+    text-align: center;
+    width: 50%;
+    position: relative; 
+  }
+
+  .winner-card .name {
+    font-size: 20px;
+  }
+
+  .winner-card .score{
+    color: gold;
+  }
+
+  .winner-icon {
+    position: absolute;
+    top: 72px;
+    left: 48%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+}
+
+.winner-icon img{
+  width: 120%;
+}
+  .second-card{
+    font-size: 50px;
+    background-color:#DEF7FA;
+    border-radius: 10px;
+    height: 50%;
+    text-align: center;
+    width: 50%;
+  }
+
+  .third-card{
+    font-size: 50px;
+    background-color: #DEF7FA;
+    border-radius: 10px;
+    height: 42%;
+    text-align: center;
+    width: 50%;
+  }
+  
+  .ranking-list {
+    background-color: white;
+    padding: 0px 10px;
+    border-radius: 10px;
+    margin: 0px 10px;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 550px;
+
+    color: #4F83B6;
+  }
+  
+  .ranking-list ul {
+    list-style: none;
+  }
+  
+  .ranking-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+  }
+
+  .ranking-list li img{
+    width: 3.5%;
+
+  }
+
+ .index{
+    margin-right: 5px;
+ }
+
+  .user-name{
+    color: #003366;
+    flex-grow: 1;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+
+  .profile-image img{
+    width: 60%;
+  }
+
+  .profile-image {
+    position: relative;
+    width: 115px; 
+    height: 100px; 
+  }
+  
+  .profile-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .one-image, .two-image, .three-image {
+    position: absolute;
+    top: 25px; 
+    left: 50px; 
+    width: 30%; 
+    height: auto;
+    transform: scale(0.4);
+  }
+  
+  

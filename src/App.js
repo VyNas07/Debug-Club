@@ -7,6 +7,7 @@ import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import ProfileEdit from './pages/ProfileEdit/ProfileEdit';
+import RankingPage from './pages/RankingPage/RankingPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element = {<ErrorPage />} />
         <Route path="/profileedit" element = {<ProfileEdit />} />
+        <Route path="/ranking" element = {<RankingPage/>} />
       </Routes>
     </Router>
   );

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './ProfileEdit.css';
+import Header from '../../components/Header2/Header2';
 
-const ProfileEditPage = () => {
+function ProfileEditPage() {
 
   const [profile, setProfile] = useState({
     name: "",
@@ -20,7 +21,7 @@ const ProfileEditPage = () => {
     });
   };
 
- 
+
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -36,23 +37,24 @@ const ProfileEditPage = () => {
     }
   };
 
-  
+
   const handleRemoveImage = () => {
     setImagePreview("");
     setProfile({
       ...profile,
-      profilePicture: "" 
+      profilePicture: ""
     });
   };
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
+
     console.log('Perfil salvo:', profile);
   };
 
   return (
+    <><div><Header /></div>
     <div className="profile-edit-page">
       <h2>Editar Perfil</h2>
       <form onSubmit={handleSubmit} className="edit-form">
@@ -64,10 +66,9 @@ const ProfileEditPage = () => {
             name="profilePicture"
             accept="image/*"
             onChange={handleImageChange}
-            style={{ display: "none" }}
-          />
-          
-          
+            style={{ display: "none" }} />
+
+
           {!imagePreview && (
             <label htmlFor="profilePicture" className="custom-file-upload">
               Escolher foto
@@ -83,7 +84,7 @@ const ProfileEditPage = () => {
                 </button>
               </>
             ) : (
-                null
+              null
             )}
           </div>
         </div>
@@ -96,8 +97,7 @@ const ProfileEditPage = () => {
             name="name"
             value={profile.name}
             onChange={handleInputChange}
-            required
-          />
+            required />
         </div>
 
         <div className="form-group">
@@ -108,8 +108,7 @@ const ProfileEditPage = () => {
             name="email"
             value={profile.email}
             onChange={handleInputChange}
-            required
-          />
+            required />
         </div>
 
         <div className="form-group">
@@ -119,14 +118,13 @@ const ProfileEditPage = () => {
             name="bio"
             value={profile.bio}
             onChange={handleInputChange}
-            rows="4"
-          />
+            rows="4" />
         </div>
 
         <button type="submit" className="save-button">Salvar</button>
       </form>
-    </div>
+    </div></>
   );
-};
+}
 
 export default ProfileEditPage;
