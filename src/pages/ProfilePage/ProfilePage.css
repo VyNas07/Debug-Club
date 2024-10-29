@@ -16,13 +16,13 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin: 20px 30px;
   padding: 20px;
-  width: 300px; /* Largura fixa */
-  min-height: 400px; /* Altura mínima fixa para acomodar o conteúdo */
+  width: 300px;
+  min-height: 400px;
   color: white;
   flex: 2;
   justify-content: flex-start;
   display: flex;
-  flex-direction: column; /* Mantém a estrutura em coluna */
+  flex-direction: column;
 }
 
 .profile-card img {
@@ -44,7 +44,7 @@ body {
   margin-bottom: 25px;
   font-size: 1.1rem;
   color: #D9D9D9;
-  white-space: nowrap; /* Mantém a profissão em uma linha */
+  white-space: nowrap;
 }
 
 .classe {
@@ -75,7 +75,7 @@ body {
   cursor: pointer;
   width: 55px;
   height: 25px;
-  margin-left: 80%; /* Alinha o botão à direita */
+  margin-left: 80%;
 }
 
 .edit-button img {
@@ -86,10 +86,10 @@ body {
 
 .main {
   align-items: flex-start;
-  gap: 20px; /* Ajustado para melhor espaçamento */
+  gap: 20px;
   background-color: #F2F2F2;
   border-radius: 10px;
-  padding: 20px; /* Adicionando padding para espaço interno */
+  padding: 20px;
   width: 800px;
 }
 
@@ -171,7 +171,7 @@ body {
   padding: 0px 10px;
   margin: 0px 10px;
   color: #4A90E2;
-  margin-top: 30px; /* Corrigido para uma margem adequada */
+  margin-top: 30px;
 }
 
 .contribution-status {

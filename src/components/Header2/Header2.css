@@ -58,12 +58,40 @@
 
 .button-perfil img {
     width: 100%;
-    height: 100%; /* Ajuste para 100% */
-    max-width: none; /* Remover limite de largura */
-    max-height: none; /* Remover limite de altura */
+    height: 100%;
+    max-width: none;
+    max-height: none;
     object-fit: cover; 
-    border-radius: 50%; /* Tornar a imagem redonda */
+    border-radius: 50%;
 }
+
+.profile-menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #f0f0f1;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .menu-option {
+    color: #4A90E2;
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .menu-option:hover {
+    background-color: #d3d6d8;
+  }
+  
 
 @media (max-width: 1024px) {
     .header {

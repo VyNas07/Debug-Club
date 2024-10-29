@@ -8,6 +8,9 @@ import { useNavigate } from 'react-router-dom';
 
 
 function ProfileEditPage() {
+  const validateName = (name) => {
+    return name.length >= 5 && name.length <=20
+  }
   const navigate = useNavigate();
   const [profile, setProfile] = useState({
     name: "",
@@ -15,7 +18,7 @@ function ProfileEditPage() {
     bio: "",
     profilePicture: ""
   });
-
+  const [isValidName, setIsValidName] = useState(true);
   const [imagePreview, setImagePreview] = useState(profile.profilePicture);
 
   // Função para buscar dados do usuário no Firebase
@@ -126,8 +129,15 @@ function ProfileEditPage() {
               id="name"
               name="name"
               value={profile.name}
-              onChange={handleInputChange}
+              onChange={(e) => {
+                handleInputChange(e);
+                setIsValidName(validateName(e.target.value));
+              }}
+              className={!validateName(profile.name) ? 'input-error' : ''}
             />
+            {!validateName(profile.name) && (
+              <p className="error-message">Nome deve ter entre 5 e 20 caracteres.</p>
+            )}
           </div>
 
           <div className="form-group">
