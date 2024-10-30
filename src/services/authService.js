@@ -11,13 +11,29 @@ export const githubLogin = async () => {
         const token = credential.accessToken;
 
         const user = result.user;
-        const githubUsername = user.providerData[0].displayName;
+        const githubUsername = await getGithubUsername(token); // Obtenha o username usando a API do GitHub
 
         return { success: true, token, username: githubUsername, userId: user.uid };
     } catch (error) {
         console.error('Erro no login com GitHub:', error);
         return { success: false, error: 'Erro no login com GitHub. Por favor, tente novamente mais tarde.' };
     }
+};
+
+// Função para obter o username do GitHub
+const getGithubUsername = async (token) => {
+    const response = await fetch('https://api.github.com/user', {
+        headers: {
+            Authorization: `token ${token}`,
+        },
+    });
+
+    if (!response.ok) {
+        throw new Error('Erro ao buscar username do GitHub');
+    }
+
+    const data = await response.json();
+    return data.login; // Retorna o username
 };
 
 // Verificar disponibilidade do nome
@@ -28,7 +44,7 @@ export const checkNameAvailability = async (name) => {
 };
 
 // Registrar novo usuário
-export const registerUser = async (name, password) => {
+export const registerUser = async (name, password, githubUsername) => {
     const user = auth.currentUser;
     if (!user) {
         throw new Error('Conexão com o GitHub não encontrada. Por favor, tente autenticar-se novamente.');
@@ -37,9 +53,10 @@ export const registerUser = async (name, password) => {
     if (userDoc.exists()) {
         throw new Error('Você já possui uma conta com este GitHub.');
     }
+    
     await setDoc(doc(db, 'users', user.uid), {
         name,
         password,
-        githubUsername: user.providerData[0].displayName,
+        githubUsername,
     });
 };

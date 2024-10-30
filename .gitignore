@@ -66,3 +66,5 @@ jspm_packages/
 package-lock.json
 yarn.lock
 >>>>>>> 486f01747ef8a9d7de6babd6292ce1cc47208eb1
+# .gitignore
+.env
