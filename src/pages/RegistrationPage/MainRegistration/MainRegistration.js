@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { githubLogin, checkNameAvailability, registerUser } from '../../../services/authService';
 import './MainRegistration.css';
 import { Link, useNavigate } from "react-router-dom";
-import { integrateGithubIssues } from '../../../services/githubIntegration';
+import { integrateGithubData } from '../../../services/githubIntegration';
 import logoGitHub from '../../../assets/IMG-RegistrationPage/githubazul.png';
 import { auth, db } from '../../../firebase';
 import { doc, setDoc } from 'firebase/firestore';
@@ -76,7 +76,7 @@ const MainRegistration = () => {
             }, { merge: true });
 
             // Integração do GitHub com o token
-            await integrateGithubIssues(githubUsername, user.uid);
+            await integrateGithubData(githubUsername, user.uid);
 
             setConfirmationMessage('Cadastro realizado com sucesso! Issues integradas.');
             setName('');

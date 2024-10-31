@@ -5,7 +5,7 @@ import './MainLogin.css';
 import { Link, useNavigate } from "react-router-dom";
 import { auth, db } from '../../../firebase';
 import { getDocs, collection, query, where } from 'firebase/firestore';
-import { integrateGithubIssues } from '../../../services/githubIntegration';
+import { integrateGithubData } from '../../../services/githubIntegration';
 
 const MainLogin = () => {
   const [name, setName] = useState('');
@@ -38,7 +38,7 @@ const MainLogin = () => {
       const githubUsername = name; 
 
       // Integração do GitHub
-      await integrateGithubIssues(githubUsername, userDoc.id, githubToken);
+      await integrateGithubData(githubUsername, userDoc.id, githubToken);
 
       // Login bem-sucedido
       navigate('/profile'); 
