@@ -61,6 +61,7 @@ body {
   overflow-wrap: break-word;
   word-wrap: break-word;
   white-space: normal;
+  text-align: center;
 }
 
 .centered-bio {

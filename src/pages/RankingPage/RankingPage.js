@@ -8,7 +8,6 @@ import twoIcon from '../../assets/IMG-RankingPage/2ndplace.png';
 import threeIcon from '../../assets/IMG-RankingPage/3rdplace.png';
 import Header2 from '../../components/Header2/Header2';
 
-
 const RankingPage = () => {
   const users = [
     { name: "Eduardo Oliveira", score: 361 },
@@ -37,57 +36,121 @@ const RankingPage = () => {
     { name: "Diego Souza", score: 8 }
   ];
 
+  // Ordenando os usuários pela pontuação
+  const sortedUsers = [...users].sort((a, b) => b.score - a.score);
+  const topUsers = sortedUsers.slice(3, 10); // Do 4º ao 10º lugar
+
   return (
-    <div>  <Header2 /> {Header2}
-    <div className="ranking-page">
-      <div className="content">
-        <div className="top-three">
-          <div className="second-card">
-          <div className="profile-image">
-          <img src={twoIcon} alt="second-place" className="two-image" />  
-          <img src={profileIcon} alt="Profile" />
-        </div>
-            <p className="name">Heitor Costa</p>
-            <p className="score">382</p>
-          </div>
-          <div className='winner-icon'>
-          <img src={winnerIcon} alt="winner"/>
-          </div>
-          <div className="winner-card">
-          <div className="profile-image">
-          <img src={oneIcon} alt="1st-place" className="one-image" />
-          <img src={profileIcon} alt="Profile" />
-        </div>
-            <p className="name">Joao Silva</p>
-            <p className="score">396</p>
+    <div>
+      <Header2 />
+      <div className="ranking-page">
+        <div className="content">
+
+
+          <div className="top-three">
+            <div className="second-card">
+              <div className="profile-image">
+                <img src={twoIcon} alt="second-place" className="two-image" />
+                <img src={profileIcon} alt="Profile" />
+              </div>
+              <p className="name">Heitor Costa</p>
+              <p className="score">382</p>
+            </div>
+            <div className='winner-icon'>
+              <img src={winnerIcon} alt="winner" />
+            </div>
+            <div className="winner-card">
+              <div className="profile-image">
+                <img src={oneIcon} alt="1st-place" className="one-image" />
+                <img src={profileIcon} alt="Profile" />
+              </div>
+              <p className="name">Joao Silva</p>
+              <p className="score">396</p>
+            </div>
+
+            <div className="third-card">
+              <div className="profile-image">
+                <img src={threeIcon} alt="3rd-place" className="three-image" />
+                <img src={profileIcon} alt="Profile" />
+              </div>
+              <p className="name">Mayara Lima</p>
+              <p className="score">378</p>
+            </div>
           </div>
 
-          <div className="third-card">
-          <div className="profile-image">
-          <img src={threeIcon} alt="3rd-place" className="three-image" />
-          <img src={profileIcon} alt="Profile" />
-        </div>
-            <p className="name">Mayara Lima</p>
-            <p className="score">378</p>
+          
+            <div className="ranking-list2">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Posição</th>
+                    <th>Usuário</th>
+                    <th>Github</th>
+                    <th>PR's</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {topUsers.map((user, index) => (
+                    <tr key={user.name}>
+                      <td className="index">{index + 4}</td>
+                      <td className="user-name">
+                        <div className="user-info">
+                          <img src={profileIcon} alt={`${user.name} profile`} className="user-profile-image" />
+                          {user.name}
+                        </div>
+                      </td>
+                      <td>
+                        <img src={githubIcon} alt="github" className="github-image" />
+                      </td>
+                      <td>PR's</td>
+                      <td className="score">{user.score}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
           
-        </div>
+
+
+          {/* Mantendo a lista de classificação abaixo */}
+          <div className="ranking-list">
+            <table>
+              <thead>
+                <tr>
+                  <th>Posição</th>
+                  <th>Usuário</th>
+                  <th>Github</th>
+                  <th>PR's</th>
+                  <th>Score</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                {sortedUsers.slice(10).map((user, index) => (
+                  <tr key={user.name}>
+                    <td className="index">{index + 11}</td>
+                    <td className="user-name">
+                      <div className="user-info">
+                        <img src={profileIcon} alt={`${user.name} profile`} className="user-profile-image" />
+                        {user.name}
+                      </div>
+                    </td>
+                    <td>
+                      <img src={githubIcon} alt="github" className="github-image" />
+                    </td>
+                    <td>PR's</td>
+                    <td className="score">{user.score}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
 
         
-        <div className="ranking-list">
-          <ul>
-            {users.map((user, index) => (
-              <li key={index}>
-                <span className="index">{index + 4}. </span>
-                <img src={githubIcon} alt="github"/>
-                <span className='user-name'>{user.name}</span>
-                <span className="score">{user.score}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
-    </div>
     </div>
   );
 };

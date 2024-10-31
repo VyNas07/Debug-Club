@@ -106,19 +106,17 @@ textarea {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Nova classe para o botão "Escolher foto" */
 .choose-photo-button {
-  display: inline-block; /* Para centralizar */
-  padding: 10px 20px; /* Espaçamento interno do botão */
-  border-radius: 25px; /* Bordas arredondadas */
-  background-color: #4a90e2; /* Cor de fundo */
-  color: #def7fa; /* Cor do texto */
-  text-align: center; /* Centraliza o texto dentro do botão */
-  cursor: pointer; /* Muda o cursor ao passar sobre o botão */
-  transition: transform 0.2s; /* Adiciona uma transição suave ao efeito de transformação */
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px; 
+  background-color: #4a90e2;
+  color: #def7fa;
+  text-align: center; 
+  cursor: pointer; 
+  transition: transform 0.2s;
 }
 
-/* Efeito de transformação ao passar o mouse sobre o botão */
 .choose-photo-button:hover {
-  transform: scale(1.05); /* Aumenta o botão quando o mouse passa sobre ele */
+  transform: scale(1.05);
 }
