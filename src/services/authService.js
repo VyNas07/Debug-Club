@@ -1,6 +1,21 @@
 import { auth, db } from '../firebase';
-import { GithubAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, signInWithPopup, getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { setDoc, doc, getDoc, query, collection, where, getDocs } from 'firebase/firestore';
+
+// Função para autenticar o usuário
+export const authenticateUser = async (email, password) => {
+    const auth = getAuth();
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      const uid = user.uid; // Obtém o UID do usuário autenticado
+      console.log(`Usuário autenticado com UID: ${uid}`); // Log para depuração
+      return uid; // Retorna o UID do usuário autenticado
+    } catch (error) {
+      console.error('Erro ao autenticar usuário:', error); // Log para depuração
+      throw error;
+    }
+  };
 
 // Login com GitHub e captura do token
 export const githubLogin = async () => {
@@ -58,5 +73,7 @@ export const registerUser = async (name, password, githubUsername) => {
         name,
         password,
         githubUsername,
+        score: 0,
+        ranking: 0
     });
 };

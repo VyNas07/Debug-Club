@@ -7,19 +7,26 @@ import Header from '../../components/Header/Header';
 import Rodape from '../../components/Footer/Footer';
 import Header2 from '../../components/Header2/Header2';
 import { Link } from "react-router-dom";
-import { auth, db } from '../../firebase';
+import { db } from '../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { updateRanking } from '../../services/rankingService'; // Importa a função de atualização de ranking
+
 
 
 const Profile = () => {
+  const [userId, setUserId] = useState(null);
   const [profile, setProfile] = useState({
     name: "",
     profession: "",
     bio: "",
     profilePicture: ""
   });
+  const [score, setScore] = useState(0); // Estado para armazenar a pontuação do usuário
+  const [ranking, setRanking] = useState(0); // Estado para armazenar o ranking do usuário
 
   const fetchUserProfile = async () => {
+    const auth = getAuth();
     const userId = auth.currentUser.uid;
     const userDocRef = doc(db, 'users', userId);
     const userDoc = await getDoc(userDocRef);
@@ -32,12 +39,32 @@ const Profile = () => {
         bio: userData.bio || "",
         profilePicture: userData.profilePicture || profileIcon
       });
+      setScore(userData.score || 0); // Define a pontuação do usuário
+      setRanking(userData.ranking || 0); // Define o ranking do usuário
+
     }
   };
 
   useEffect(() => {
-    fetchUserProfile();
-  }, []);
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserId(user.uid); // Define o UID do usuário logado
+        console.log(`Usuário logado com UID: ${user.uid}`); // Log para depuração
+        fetchUserProfile(user.uid); // Busca o perfil do usuário logado
+        updateRanking(user.uid); // Atualiza o ranking do usuário
+      } else {
+        console.log('Nenhum usuário logado'); // Log para depuração
+      }
+    });
+
+    return () => unsubscribe();
+    }, []);
+
+    if (!userId) {
+      return <p>Carregando...</p>; // Exibe uma mensagem de carregamento enquanto o UID não é obtido
+    }
+  
   const getStatusColor = (status) => {
     switch (status) {
       case 'Aberta':
@@ -77,11 +104,11 @@ const Profile = () => {
           <div className="ranking-section">
             <div className="ranking-card">
               <h3>Ranking Atual:</h3>
-              <span className="ranking-value">4352</span>
+              <span className="ranking-value">{ranking}</span> {/* Renderiza o ranking do usuário */}
             </div>
             <div className="ranking-card">
               <h3>Pontuação:</h3>
-              <span className="ranking-value">8</span>
+              <span className="ranking-value">{score}</span> 
             </div>
           </div>
           <h3 className="historico">Histórico de Contribuições:</h3>
@@ -142,7 +169,7 @@ const Profile = () => {
         </div>
       </main>
     </div>
-    <Rodape/>
+      <Rodape/>
     </div>
 
   );
