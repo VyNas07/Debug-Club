@@ -1,5 +1,6 @@
 import { getFirestore } from 'firebase/firestore';
 import { fetchIssues, saveDataToFirestore, fetchCommits, fetchPullRequests, fetchForks } from './githubUtils';
+import { addPoints } from './scoreService';
 
 // Obtém o token do GitHub da variável de ambiente
 const token = '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';
@@ -16,6 +17,7 @@ export const integrateGithubData = async (username, userId) => {
       for (const issue of issues) {
         console.log('Salvando issue:', issue); // Adicionado log aqui
         await saveDataToFirestore('issues', issue, userId, db);
+        await addPoints(userId, 5);
         console.log('Issue salva:', issue.id);
       }
     } else {
@@ -30,6 +32,7 @@ export const integrateGithubData = async (username, userId) => {
         for (const commit of commits) {
           console.log('Salvando commit:', commit); // Adicionado log aqui
           await saveDataToFirestore('commits', commit, userId, db);
+          await addPoints(userId, 3);
           console.log('Commit salvo:', commit.sha);
         }
       } else {
@@ -44,6 +47,7 @@ export const integrateGithubData = async (username, userId) => {
         for (const pr of pullRequests) {
           console.log('Salvando pull request:', pr); // Adicionado log aqui
           await saveDataToFirestore('pullRequests', pr, userId, db);
+          await addPoints(userId, 10);
           console.log('Pull request salva:', pr.id);
         }
       } else {
@@ -57,6 +61,7 @@ export const integrateGithubData = async (username, userId) => {
       for (const fork of forks) {
         console.log('Salvando fork:', fork); // Adicionado log aqui
         await saveDataToFirestore('forks', fork, userId, db);
+        await addPoints(userId, 2);
         console.log('Fork salvo:', fork.id);
       }
     } else {

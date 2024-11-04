@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { getUserPointsById } from '../services/scoreService';
+import { doc, onSnapshot } from 'firebase/firestore';
+import { db } from '../firebase';
 
 const ScoreCard = ({ userId }) => { 
   const [score, setScore] = useState(0);
 
   useEffect(() => {
-    const fetchPoints = async () => {
-      if (!userId) {
-        console.error('userId está indefinido');
-        return;
-      }
+    if (!userId) {
+      console.error('userId está indefinido');
+      return;
+    }
 
-      try {
-        const userPoints = await getUserPointsById(userId);
-        setScore(userPoints);
-      } catch (error) {
-        console.error('Erro ao buscar pontos do usuário:', error);
+    const userRef = doc(db, 'users', userId);
+    const unsubscribe = onSnapshot(userRef, (doc) => {
+      if (doc.exists()) {
+        setScore(doc.data().score || 0);
       }
-    };
+    });
 
-    fetchPoints();
+    return () => unsubscribe(); // Cleanup para remover o listener
   }, [userId]);
 
   return (

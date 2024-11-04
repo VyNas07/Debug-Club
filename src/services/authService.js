@@ -1,6 +1,7 @@
 import { auth, db } from '../firebase';
 import { GithubAuthProvider, signInWithPopup, getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { setDoc, doc, getDoc, query, collection, where, getDocs } from 'firebase/firestore';
+import { integrateGithubData } from './githubIntegration';
 
 // Função para autenticar o usuário
 export const authenticateUser = async (email, password) => {
@@ -76,4 +77,5 @@ export const registerUser = async (name, password, githubUsername) => {
         score: 0,
         ranking: 0
     });
+    await integrateGithubData(githubUsername, user.uid);
 };
