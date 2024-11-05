@@ -36,9 +36,9 @@ const RankingPage = () => {
     { name: "Diego Souza", score: 8 }
   ];
 
-  // Ordenando os usuários pela pontuação
+  
   const sortedUsers = [...users].sort((a, b) => b.score - a.score);
-  const topUsers = sortedUsers.slice(3, 10); // Do 4º ao 10º lugar
+  const topUsers = sortedUsers.slice(3, 10);
 
   return (
     <div>
