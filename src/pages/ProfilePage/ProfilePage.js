@@ -22,6 +22,7 @@ const ProfilePage = () => {
   });
   const [score, setScore] = useState(0); // Estado para armazenar a pontuação do usuário
   const [ranking, setRanking] = useState(0); // Estado para armazenar o ranking do usuário
+  const [rankingHistory, setRankingHistory] = useState([]); // Estado para armazenar o histórico de ranking do usuário
 
   const fetchUserProfile = async (userId) => { // Recebe o userId como parâmetro
     const userDocRef = doc(db, 'users', userId);
@@ -35,8 +36,9 @@ const ProfilePage = () => {
         bio: userData.bio || "",
         profilePicture: userData.profilePicture || profileIcon
       });
-      setScore(userData.score || 0);
-      setRanking(userData.ranking || 0);
+      setScore(userData.score || 0); // Define a pontuação do usuário
+      setRanking(userData.ranking || 0); // Define o ranking do usuário
+
     }
   };
 
