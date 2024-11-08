@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Debug-Club/static/css/main.00be2443.css",
+    "main.js": "/Debug-Club/static/js/main.55f561a4.js",
+    "static/js/453.16020fb9.chunk.js": "/Debug-Club/static/js/453.16020fb9.chunk.js",
+    "static/media/Ranking.png": "/Debug-Club/static/media/Ranking.56ea25e5e0e5d43860e1.png",
+    "static/media/3estrelasmeio.svg": "/Debug-Club/static/media/3estrelasmeio.c1ffd3126e0098d33517818c07e4a1dc.svg",
+    "static/media/3rdplace.png": "/Debug-Club/static/media/3rdplace.2cabe277a49e64c26c71.png",
+    "static/media/2ndplace.png": "/Debug-Club/static/media/2ndplace.3dfc1c129dbed365616a.png",
+    "static/media/4estrelas.svg": "/Debug-Club/static/media/4estrelas.f1017be41de35db02d70c294ca1aef01.svg",
+    "static/media/4meioestrelas.svg": "/Debug-Club/static/media/4meioestrelas.06cd5d5343d87b3c6f3e4f984c2e3d48.svg",
+    "static/media/1stplace.png": "/Debug-Club/static/media/1stplace.b5d399c74a5b8f4ff179.png",
+    "static/media/medalha.png": "/Debug-Club/static/media/medalha.ebdbdb889e98f13e9941.png",
+    "static/media/DebugClub.svg": "/Debug-Club/static/media/DebugClub.c449a59379268a436bb19c6982b18f60.svg",
+    "static/media/5estrelas.svg": "/Debug-Club/static/media/5estrelas.17e684c0b943042bbb4414d2a3152b69.svg",
+    "static/media/painel-de-controle.png": "/Debug-Club/static/media/painel-de-controle.3e018f494c73ca02e1da.png",
+    "static/media/user.svg": "/Debug-Club/static/media/user.4433bf73fcfe7e7dc74ec147bca80244.svg",
+    "static/media/winner.png": "/Debug-Club/static/media/winner.f3ca6071be5c67f8c04e.png",
+    "index.html": "/Debug-Club/index.html",
+    "main.00be2443.css.map": "/Debug-Club/static/css/main.00be2443.css.map",
+    "main.55f561a4.js.map": "/Debug-Club/static/js/main.55f561a4.js.map",
+    "453.16020fb9.chunk.js.map": "/Debug-Club/static/js/453.16020fb9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00be2443.css",
+    "static/js/main.55f561a4.js"
+  ]
+}
