@@ -91,24 +91,26 @@ export const fetchForks = async (username, token) => {
 };
 
 // Função para salvar dados no Firestore
-export const saveDataToFirestore = async (collection, data, userId, db) => {
+// Função para salvar dados no Firestore
+// Função para salvar dados no Firestore como subcoleções de cada usuário
+// Função para salvar dados no Firestore como subcoleções de cada usuário
+export const saveDataToFirestore = async (collectionName, data, userId, db) => {
   try {
-    // Logando os dados recebidos
-    console.log('Dados recebidos para salvar:', data);
-
-    // Para commits, use o sha como id
-    const id = data.sha || data.id;
-
-    // Verifique se data e id estão definidos
+    const id = data.sha || data.id; // Use `sha` ou `id` como identificador
     if (!data || !id) {
       console.error('Dados ou ID não definidos:', data);
-      return; // Não prosseguir se os dados não forem válidos
+      return;
     }
 
-    await setDoc(doc(db, 'users', userId, collection, id.toString()), data);
-    console.log(`${collection} salvo no Firestore:`, id);
+    // Caminho para subcoleção específica do usuário
+    const docRef = doc(db, 'users', userId, collectionName, id.toString());
+
+    await setDoc(docRef, data);
+    console.log(`${collectionName} salvo como subcoleção no Firestore:`, id);
   } catch (error) {
-    console.error(`Erro ao salvar ${collection} no Firestore:`, error);
+    console.error(`Erro ao salvar ${collectionName} como subcoleção no Firestore:`, error);
   }
 };
+
+
 
