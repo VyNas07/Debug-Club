@@ -1,0 +1,81 @@
+
+.main-container {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1{
+    color: #4A90E2 ;
+    font-size: 22px;
+  }
+  
+  .main-content {
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .repo{
+    color: #003366;
+    width: 100%;
+    justify-content: center;
+
+    background-color: #F2F2F2;
+    border-radius: 10px;
+  }
+  
+  .repository-list {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .repository-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 8px;
+  }
+  
+  .repo-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .repo-detail{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .repo-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .repo-user {
+    font-size: 14px;
+    color: #C3C3C3;
+    font-weight: bold;
+  }
+  
+  .repo-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 15px;
+  }
+  
+  .status {
+    font-weight: bold;
+  }
+  
+  .date {
+    font-size: 12px;
+    color: #aaa;
+  }
+  
+
+  .repo-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+  }
