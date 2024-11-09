@@ -22,59 +22,88 @@ const ProfilePage = () => {
   });
   const [score, setScore] = useState(0); // Estado para armazenar a pontuação do usuário
   const [ranking, setRanking] = useState(0); // Estado para armazenar o ranking do usuário
-  const [rankingHistory, setRankingHistory] = useState([]); // Estado para armazenar o histórico de ranking do usuário
+  const [loading, setLoading] = useState(true); // Estado de carregamento
 
-  const fetchUserProfile = async (userId) => { // Recebe o userId como parâmetro
-    const userDocRef = doc(db, 'users', userId);
-    const userDoc = await getDoc(userDocRef);
+  const fetchUserProfile = async (userId) => { 
+    if (!userId) {
+      console.log("Erro: userId é nulo ou indefinido.");
+      return;
+    }
+    
+    try {
+      const userDocRef = doc(db, 'users', userId);
+      const userDoc = await getDoc(userDocRef);
   
-    if (userDoc.exists()) {
-      const userData = userDoc.data();
-      setProfile({
-        name: userData.name || "",
-        profession: userData.profession || "",
-        bio: userData.bio || "",
-        profilePicture: userData.profilePicture || profileIcon
-      });
-      setScore(userData.score || 0); // Define a pontuação do usuário
-      setRanking(userData.ranking || 0); // Define o ranking do usuário
-
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        setProfile({
+          name: userData.name || "",
+          profession: userData.profession || "",
+          bio: userData.bio || "",
+          profilePicture: userData.profilePicture || profileIcon
+        });
+        setScore(userData.score || 0); // Define a pontuação do usuário
+        setRanking(userData.ranking || 0); // Define o ranking do usuário
+      } else {
+        console.log('Perfil não encontrado');
+      }
+    } catch (error) {
+      console.error('Erro ao buscar perfil: ', error);
     }
   };
-
+ 
   useEffect(() => {
     const auth = getAuth();
+  
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      console.log('Estado de autenticação mudou: ', user);
       if (user) {
         console.log(`Usuário logado: ${user.uid}`);
-        setUserId(user.uid);
-        fetchUserProfile(user.uid);
-        updateRanking(user.uid);
+        setUserId(user.uid);  // Atualizando o userId com o uid do usuário
       } else {
         console.log('Nenhum usuário logado');
+        setUserId(null); // Garantir que userId seja null quando o usuário não estiver logado
       }
     });
   
     return () => unsubscribe();
-  }, []);
-
-  if (!userId) {
-    return <p>Carregando...</p>; // Exibe uma mensagem de carregamento enquanto o UID não é obtido
+  }, []); // Hook executado apenas uma vez após o componente ser montado
+  
+  // Espera até o userId estar disponível
+  useEffect(() => {
+    if (userId) {
+      setLoading(true); // Inicia o carregamento
+      fetchUserProfile(userId)
+        .finally(() => {
+          setLoading(false); // Define 'loading' como false após o carregamento
+        });
+    }
+  }, [userId]); // Executa quando userId mudar
+  
+  // Exibe "Carregando" enquanto os dados estão sendo carregados
+  if (loading) {
+    return <p>Carregando...</p>;
   }
+  
+  // Verifica se o usuário não está logado
+  if (!userId) {
+    return <p>Você precisa estar logado para acessar o perfil.</p>;
+  }
+  
 
   // Função para determinar o título da classe com base no ranking
-  const getUserClass = (ranking) => {
-    if (ranking >= 500) {
+  const getUserClass = (score) => {
+    if (score >= 500) {
       return "Resolutivo Supremo"
     }
-    if (ranking >= 350) {
+    else if (score >= 350) {
       return "Arquiteto da Resolução"
     }
-    if (ranking >= 200) {
+    else if (score >= 200) {
       return "Guru do Debugging";
-    } else if (ranking >= 100) {
+    } else if (score >= 100) {
       return "Veterano da Codificação";
-    } else if (ranking >= 50) {
+    } else if (score >= 50) {
       return "Desbravador de Problemas";
     } else {
       return "Explorador de Bugs";
@@ -172,11 +201,11 @@ const ProfilePage = () => {
                       </div>
                       <div>
                         <p className="contribution-title">Erro de "403 Forbidden" ao acessar áreas restritas</p>
-                        <p className="contribution-user">arthurlima05</p>
+                        <p className="contribution-user">ana.santos</p>
                       </div>
                     </div>
-                    <span className="contribution-status" style={{ color: getStatusColor('Aberta') }}>
-                      Aberta
+                    <span className="contribution-status" style={{ color: getStatusColor('Fechada') }}>
+                      Fechada
                     </span>
                   </div>
                 </li>

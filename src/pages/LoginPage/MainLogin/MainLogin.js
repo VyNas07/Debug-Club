@@ -1,11 +1,9 @@
 // src/pages/LoginPage/MainLogin.js
-
 import React, { useState } from 'react';
 import './MainLogin.css';
 import { Link, useNavigate } from "react-router-dom";
-import { auth, db } from '../../../firebase';
+import { db } from '../../../firebase';
 import { getDocs, collection, query, where } from 'firebase/firestore';
-import { integrateGithubData } from '../../../services/githubIntegration';
 
 const MainLogin = () => {
   const [name, setName] = useState('');
@@ -15,33 +13,32 @@ const MainLogin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrorMessage(''); // Limpa a mensagem de erro antes de tentar o login
+    setErrorMessage('');
+
     if (!name || !password) {
       setErrorMessage('Todos os campos são obrigatórios.');
       return;
     }
+
     try {
-      // Verificar se o nome e a senha correspondem a um usuário no banco de dados
       const q = query(collection(db, 'users'), where('name', '==', name));
       const querySnapshot = await getDocs(q);
+
       if (querySnapshot.empty) {
         setErrorMessage('Nome não cadastrado.');
         return;
       }
+
       const userDoc = querySnapshot.docs[0];
+
       if (userDoc.data().password !== password) {
         setErrorMessage('Senha incorreta.');
         return;
       }
 
-      const githubToken = userDoc.data().githubToken; 
-      const githubUsername = name; 
-
-      // Integração do GitHub
-      await integrateGithubData(githubUsername, userDoc.id, githubToken);
-
-      // Login bem-sucedido
-      navigate('/profile'); 
+      // Apenas redireciona o usuário para a página de perfil, sem recalcular a pontuação
+      navigate('/profile');
+      
     } catch (error) {
       setErrorMessage('Erro ao fazer login.');
       console.error('Erro ao fazer login:', error);

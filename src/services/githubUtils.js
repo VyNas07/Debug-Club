@@ -90,10 +90,7 @@ export const fetchForks = async (username, token) => {
   }
 };
 
-// Função para salvar dados no Firestore
-// Função para salvar dados no Firestore
-// Função para salvar dados no Firestore como subcoleções de cada usuário
-// Função para salvar dados no Firestore como subcoleções de cada usuário
+
 export const saveDataToFirestore = async (collectionName, data, userId, db) => {
   try {
     const id = data.sha || data.id; // Use `sha` ou `id` como identificador

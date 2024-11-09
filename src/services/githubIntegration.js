@@ -4,7 +4,7 @@ import { addPoints } from './scoreService';
 
 // Obtém o token do GitHub da variável de ambiente
 
-const token = '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';
+const token = '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';
 
 const db = getFirestore();
 // Integrar dados do GitHub para o usuário
