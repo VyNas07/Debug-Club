@@ -61,110 +61,19 @@
   }
   
   /* Responsividade */
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     .rodape-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 2rem 5vw;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
-
+  
     .logo-img {
-        margin-bottom: 2rem;
-        width: 40%; /* Ajustando para telas intermediárias */
+      margin-bottom: 20px;
     }
-
+  
     .contato-rodape, .endereco-rodape {
-        margin-bottom: 1.5rem;
-        font-size: 1rem;
+      margin-bottom: 20px;
     }
-
-    .contato-rodape a, .endereco-rodape a {
-        font-size: 1rem;
-        padding: 0.6rem 1.2rem;
-        text-align: center;
-        display: block;
-        margin-top: 0.5rem;
-    }
-
-    .social-media {
-        margin-top: 2rem;
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-    }
-
-    .social-media a {
-        font-size: 1.5rem;
-        padding: 0.6rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .rodape-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 2rem 5vw;
-    }
-
-    .logo-img {
-        margin-bottom: 2rem;
-        width: 50%;
-    }
-
-    .contato-rodape, .endereco-rodape {
-        margin-bottom: 1.5rem;
-        font-size: 1rem;
-    }
-
-    .contato-rodape a, .endereco-rodape a {
-        font-size: 1rem;
-        padding: 0.6rem 1.2rem;
-        text-align: center;
-        display: block;
-        margin-top: 0.5rem;
-    }
-
-    .social-media {
-        margin-top: 2rem;
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .social-media a {
-        font-size: 1.5rem;
-        padding: 0.6rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .rodape-content {
-        padding: 1rem 5vw;
-    }
-
-    .logo-img {
-        margin-bottom: 1.5rem;
-        width: 60%;
-    }
-
-    .contato-rodape, .endereco-rodape {
-        margin-bottom: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .contato-rodape a, .endereco-rodape a {
-        font-size: 1rem;
-        padding: 0.6rem 1.5rem;
-    }
-
-    .social-media {
-        margin-top: 1.5rem;
-    }
-
-    .social-media a {
-        font-size: 1.4rem;
-        padding: 0.6rem;
-    }
-}
+  }
+  
