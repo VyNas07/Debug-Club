@@ -3,8 +3,7 @@ import { fetchIssues, saveDataToFirestore, fetchCommits, fetchPullRequests, fetc
 import { addPoints } from './scoreService';
 
 // Obtém o token do GitHub da variável de ambiente
-
-const token = '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';
+const token = process.env.REACT_APP_GITHUB_TOKEN;
 
 const db = getFirestore();
 // Integrar dados do GitHub para o usuário
