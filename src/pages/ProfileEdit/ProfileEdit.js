@@ -6,11 +6,11 @@ import { auth, db } from '../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
-
 function ProfileEditPage() {
   const validateName = (name) => {
-    return name.length >= 5 && name.length <=20
-  }
+    return name.length >= 5 && name.length <= 20;
+  };
+  
   const navigate = useNavigate();
   const [profile, setProfile] = useState({
     name: "",
@@ -18,8 +18,9 @@ function ProfileEditPage() {
     bio: "",
     profilePicture: ""
   });
+  
   const [isValidName, setIsValidName] = useState(true);
-  const [imagePreview, setImagePreview] = useState(profile.profilePicture);
+  const [imagePreview, setImagePreview] = useState(null); // Altere para null
 
   // Função para buscar dados do usuário no Firebase
   const fetchUserProfile = async (userId) => {
@@ -30,12 +31,12 @@ function ProfileEditPage() {
       const userData = userDoc.data();
       setProfile(prevProfile => ({
         ...prevProfile,
-        name: userData.name || "", // Preenche o nome já salvo
-        profession: userData.profession || "", // Preenche a profissão se existir
-        bio: userData.bio || "", // Preenche a bio se existir
-        profilePicture: userData.profilePicture || "" // Preenche a imagem se existir
+        name: userData.name || "",
+        profession: userData.profession || "",
+        bio: userData.bio || "",
+        profilePicture: userData.profilePicture || ""
       }));
-      setImagePreview(userData.profilePicture || ""); // Prepara a imagem para visualização
+      setImagePreview(userData.profilePicture || null); // Alteração: Defina o preview como null inicialmente
     }
   };
 
@@ -57,7 +58,7 @@ function ProfileEditPage() {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImagePreview(reader.result);
+        setImagePreview(reader.result); // Atualiza a visualização da imagem
         setProfile({
           ...profile,
           profilePicture: reader.result
@@ -68,7 +69,7 @@ function ProfileEditPage() {
   };
 
   const handleRemoveImage = () => {
-    setImagePreview("");
+    setImagePreview(null); // Remove o preview
     setProfile({
       ...profile,
       profilePicture: ""
@@ -106,20 +107,18 @@ function ProfileEditPage() {
 
             {!imagePreview && (
               <label htmlFor="profilePicture" className="custom-file-upload">
-                Escolher foto
+                <span>Escolher foto</span>
               </label>
             )}
 
-            <div className="image-preview">
-              {imagePreview ? (
-                <>
-                  <img src={imagePreview} alt="Profile" />
-                  <button type="button" onClick={handleRemoveImage} className="remove-button">
-                    Remover Foto
-                  </button>
-                </>
-              ) : null}
-            </div>
+            {imagePreview && (
+              <div className="image-preview">
+                <img src={imagePreview} alt="Profile" />
+                <button type="button" onClick={handleRemoveImage} className="remove-button">
+                  Remover Foto
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="form-group">

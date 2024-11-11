@@ -5,10 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 import profileIcon from '../../assets/IMG-ProfilePage/profileimg.png';
 import { auth, db } from '../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
+import logoMenu from '../../assets/IMG-Gerais/menu.png'; // Importando o ícone do menu
 
 const Header2 = () => {
   const [userProfilePicture, setUserProfilePicture] = useState(profileIcon);
-  const [showMenu, setShowMenu] = useState(false); // Controla o menu suspenso
+  const [showHamburgerMenu, setShowHamburgerMenu] = useState(false); // Controla o menu hambúrguer
   const navigate = useNavigate();
 
   const fetchUserProfilePicture = async (userId) => {
@@ -33,18 +34,17 @@ const Header2 = () => {
   }, []);
 
   const handleProfileClick = () => {
-    setShowMenu(!showMenu);
-  };
-
-  const handleViewProfile = () => {
-    setShowMenu(false);
+    // Em telas pequenas, redireciona para /profile
     navigate('/profile');
   };
 
   const handleLogout = () => {
-    setShowMenu(false);
     auth.signOut();
     navigate('/');
+  };
+
+  const toggleHamburgerMenu = () => {
+    setShowHamburgerMenu(!showHamburgerMenu);
   };
 
   return (
@@ -54,21 +54,33 @@ const Header2 = () => {
           <img src={logoDebugClub} alt='logo' />
         </Link>
       </div>
-      
-      <nav className="nav-links">
-        <a href='#ranking'>Ranking</a>
-        <a href='#dashboard'>Dashboard</a>
-        <a href='#repositorios'>Repositórios</a>
-        <button className='button-perfil' onClick={handleProfileClick}>
-          <img src={userProfilePicture} alt='Profile' />
-        </button>
-        {showMenu && (
-          <div className="profile-menu">
-            <button onClick={handleViewProfile} className="menu-option">Visualizar Perfil</button>
-            <button onClick={handleLogout} className="menu-option">Sair</button>
-          </div>
-        )}
-      </nav>
+
+      {/* Menu com links normais - telas grandes */}
+      <div className="nav-links">
+        <Link to="/ranking">Ranking</Link>
+        <Link to="#dashboard">Dashboard</Link>
+        <Link to="#repositorios">Repositórios</Link>
+      </div>
+
+      {/* Menu Hamburguer para telas menores */}
+      <div className="hamburger-menu" onClick={toggleHamburgerMenu}>
+        <img src={logoMenu} alt="Menu" />
+      </div>
+
+      {/* Menu suspenso - links (só visível em telas pequenas) */}
+      {showHamburgerMenu && (
+        <div className="hamburger-dropdown">
+          <a href="/ranking">Ranking</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#repositorios">Repositórios</a>
+          <button onClick={handleLogout} className="menu-option">Sair</button>
+        </div>
+      )}
+
+      {/* Ícone de perfil fixo à direita do hambúrguer */}
+      <button className="button-perfil hamb-profile" onClick={handleProfileClick}>
+        <img src={userProfilePicture} alt='Profile' />
+      </button>
     </header>
   );
 };

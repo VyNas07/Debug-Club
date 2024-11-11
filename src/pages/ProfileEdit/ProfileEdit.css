@@ -6,6 +6,10 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
 }
 
 h2 {
@@ -15,7 +19,7 @@ h2 {
 }
 
 .edit-form .form-group {
-  margin-bottom: 15px;   
+  margin-bottom: 15px;
   text-align: center;
 }
 
@@ -31,6 +35,7 @@ h2 {
   color: #4F83B6;
   margin-left: 20%;
 }
+
 .input-error {
   border-color: red;
   color: red;
@@ -40,19 +45,20 @@ h2 {
   color: red;
 }
 
-.edit-form label.custom-file-upload{
-  font-weight: normal;
+.edit-form label.custom-file-upload {
+  font-weight: bold;
   font-size: 14px;
 }
 
 .edit-form input[type="text"],
 .edit-form input[type="email"],
 .edit-form textarea {
-  width: 60%;
+  width: 90%;
   padding: 10px;
-  border: 1px solid #b6b6b6;
-  border-radius: 5px;
+  border: 1px solid #4A90E2;
+  border-radius: 15px;
   font-size: 16px;
+  color: #000000;
 }
 
 .edit-form input[type="file"] {
@@ -60,28 +66,53 @@ h2 {
   margin-bottom: 10px;
 }
 
+.image-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  margin-top: 10px;
+}
+
 .image-preview img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  margin-top: 10px;
-  display: flex;
-  margin-left: 30%;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.remove-button{
- background: none;
- border: none;
- color: #4F83B6;
- font-size: 14px;
- cursor: pointer;
+.remove-button {
+  background: none;
+  border: none;
+  color: #4F83B6;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .custom-file-upload {
   font-size: 14px;
-  text-decoration: none;
+  background-color: #4F83B6;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.2s;
+  max-width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.custom-file-upload:hover {
+  transform: scale(1.05);
+}
+
+.custom-file-upload span {
+  color: white;
 }
 
 .save-button {
@@ -97,10 +128,6 @@ h2 {
   margin: 20px auto;
 }
 
-.custom-file-upload {
-  cursor: pointer;
-}
-
 textarea {
   resize: none;
   font-family: 'Montserrat', sans-serif;
@@ -109,12 +136,13 @@ textarea {
 .choose-photo-button {
   display: inline-block;
   padding: 10px 20px;
-  border-radius: 25px; 
-  background-color: #4a90e2;
-  color: #def7fa;
-  text-align: center; 
-  cursor: pointer; 
-  transition: transform 0.2s;
+  border-radius: 25px;
+  background-color: #4F83B6;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .choose-photo-button:hover {

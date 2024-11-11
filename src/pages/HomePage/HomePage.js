@@ -1,4 +1,5 @@
 import React from 'react'
+import './HomePage.css'
 import Header from '../../components/Header/Header'
 import HeroSection from './HeroSection/HeroSection';
 import FeaturesSection from './FeaturesSection/FeaturesSection';

@@ -4,6 +4,14 @@
     margin: 50px;
     background-color: #4f83b6;
     border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%; /* Aumenta a largura do quadrado azul */
+    max-width: 1200px; /* Limite máximo de largura para não esticar demais */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o quadrado azul */
 }
 
 .feedback-section h2 {
@@ -98,5 +106,21 @@
     .user-feedback .user-img {
         width: 150px; /* Reduzir a largura da imagem do usuário */
         height: 75px; /* Reduzir a altura da imagem do usuário */
+    }
+
+    .feedback-section {
+        display: flex; /* Usar flexbox para centralizar */
+        justify-content: center; /* Centraliza o conteúdo horizontalmente */
+        align-items: center; /* Centraliza o conteúdo verticalmente */
+    }
+
+    .container-feedback {
+        width: 100%; /* Garantir que o container de feedback ocupe toda a largura */
+        padding: 1rem; /* Ajustar o padding do container */
+    }
+
+    .user-feedback {
+        max-width: 90%; /* Ajuste a largura máxima do feedback para ser mais responsivo */
+        margin: 0 auto; /* Garantir que o card esteja centralizado dentro do container */
     }
 }
