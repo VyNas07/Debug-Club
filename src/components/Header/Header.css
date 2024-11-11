@@ -4,18 +4,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 70px;
-    background-color: #4a90e2;
+    background-color: #4A90E2;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header a {
-
     color: #ffffff;
-
-    color: #ffffff ;
-   
-
-
 }
 
 .logo img {
@@ -27,7 +21,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 /* Estilo dos links dentro da navbar */
@@ -38,24 +31,12 @@
 }
 
 .nav-links a:hover {
-    transform: scale(1.125rem);
-  }
-  
-  .nav-links a {
-    margin: 0px 15px; 
-
-    font-weight: 500;
-    transition: transform 0.3s ease;
-  }
-  
-  .nav-links a:hover {
     transform: scale(1.1);
 }
 
 /* Estilo do botão de login */
 .button-login {
     background-color: #def7fa;
-
     color: #4a90e2;
     border: none;
     font-weight: 600;
@@ -75,91 +56,6 @@
     background-color: #2b6193;
     color: #ffffff;
     transform: scale(1.05);
-
 }
 
 /* Estilos para telas menores */
-
-
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .header {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem 5vw;
-    }
-
-    .nav-links {
-        flex-direction: row;
-        margin-top: 1rem;
-        justify-content: center;
-    }
-
-    .nav-links a {
-        margin: 0.5rem 1rem;
-        padding: 0.6rem 1.2rem;
-        font-size: 1rem;
-    }
-
-    .button-login {
-        margin-top: 1.5rem;
-        width: auto;
-        padding: 0.8rem 2rem;
-        font-size: 1rem;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-    .header {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1.5rem 5vw;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        margin-top: 1rem;
-        align-items: center;
-    }
-
-    .nav-links a {
-        margin: 0.8rem 0;
-        padding: 0.8rem 2rem;
-        text-align: center;
-        font-size: 1.1rem;
-    }
-
-    .button-login {
-        margin-top: 2rem;
-        width: auto;
-        padding: 0.8rem 2rem;
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        padding: 1rem 5vw;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        margin-top: 1rem;
-        align-items: center;
-    }
-
-    .nav-links a {
-        margin: 0.6rem 0;
-        padding: 0.6rem 1.5rem;
-        font-size: 1rem;
-    }
-
-    .button-login {
-        margin-top: 1.5rem;
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
-    }
-}
-
