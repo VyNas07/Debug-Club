@@ -52,6 +52,7 @@
     align-items: flex-end;   
     position: relative;
     margin-top: -15px;
+    gap: 3px;
 }
 
 
@@ -99,7 +100,7 @@
 
   .winner-icon {
     position: absolute;
-    top: 29px;
+    top: 58px;
     left: 48%;
     transform: translateX(-50%);
     width: 80px;
@@ -184,13 +185,18 @@
   }
 
   .profile-image img{
-    width: 60%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
   }
 
   .profile-image {
     position: relative;
-    width: 115px; 
-    height: 100px; 
+ 
+    height: 110px;
   }
   
   .profile-img {
@@ -200,8 +206,8 @@
   
   .one-image, .two-image, .three-image {
     position: absolute;
-    top: 25px; 
-    left: 50px; 
+    top: 30px; 
+    left: 60px; 
     width: 30%; 
     height: auto;
     transform: scale(0.4);
@@ -273,5 +279,59 @@ table th {
     color: #4F83B6;
     display: flex;
     justify-content: center;
+}
+
+.top-user.top-user-1{
+  
+  color:#4A90E2;
+  font-size: 20px;
+  background-color: #DEF7FA;
+  border-radius: 10px;
+  height: 70%;
+  text-align: center;
+  width: 30%;
+  position: relative; 
+  padding-top: 10px;
+  order: 2;
+  
+}
+
+.top-user.top-user-2{
+  color:#4A90E2;
+  font-size: 18px;
+  background-color: #DEF7FA;
+  border-radius: 10px;
+  height: 56%;
+  text-align: center;
+  width: 30%;
+  position: relative;
+  padding-top: 10px;
+  order: 1;
+
+}
+
+.top-user.top-user-3{
+  color:#4A90E2;
+  font-size: 18px;
+  background-color: #DEF7FA;
+  border-radius: 10px;
+  height: 46%;
+  text-align: center;
+  width: 30%;
+  position: relative; 
+  padding-top: 10px;
+  order: 3;
+}
+
+.top-user.top-user-1 .score{
+  color: gold;
+  font-weight: 650;
+  font-size: 28px;
+}
+
+.top-user.top-user-2 .score, .top-user.top-user-3 .score{
+  font-weight: 600;
+  color: #4F83B6;
+  font-size: 24px;
 }
 

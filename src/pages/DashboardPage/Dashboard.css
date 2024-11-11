@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container-general {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 4em;
+    margin-top: 2%;
+    display: flex;
+}
+
+.container-separate {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+
+.second-container-separate{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.profile {
+    flex: 0.8;
+    text-align: center;
+    background-color:#4F83B6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.profile h2 {
+    margin-top: 10px;
+    color: rgb(204, 202, 202);
+    font-size: 1.5em;
+}
+
+.role {
+    color: #ffcc00;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.progress {
+    flex: 2;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress h3 {
+    margin-bottom: 10px;
+    color: #4A90E2;
+}
+
+.progress p{
+    color: #003366;
+    font-weight: 600;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    position: relative;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    background-color: #4a90e2;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+    position: absolute;
+}
+
+.last-contribution {
+    flex: 2;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.last-contribution h3{
+    color: #4A90E2;
+}
+
+.last-contribution p{
+    color: #003366;
+    font-weight: 600;
+}
+
+.last-contribution .contribution-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contribution-detail p {
+    margin: 5px 0;
+}
+
+.status {
+    color: #ff3b3b;
+}
+
+.status-date{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews {
+    flex: 1;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reviews .review-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.review {
+    text-align: center;
+    font-weight: bold;
+}
+
+.negative {
+    color: #ff4d4d;
+}
+
+.neutral {
+    color: #ffd700;
+}
+
+.positive {
+    color: #4caf50;
+}
+
+.contributions {
+    flex: 3;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contributions {
+    flex: 2 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+
+.contributions h3{
+    color: #4A90E2;
+}
+
+.contributions h4{
+    color: #003366;
+}
+
+
