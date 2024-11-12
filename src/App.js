@@ -12,6 +12,7 @@ import RepositoriesPage from './pages/RepositoriesPage/RepositoriesPage';
 
 function App() {
   return (
+    <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
@@ -22,6 +23,7 @@ function App() {
         <Route path="/ranking" element = {<RankingPage/>} />
         <Route path="/repositories" element = {<RepositoriesPage />} />
       </Routes>
+      </Router>
   );
 }
 
