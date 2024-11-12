@@ -12,7 +12,6 @@ import RepositoriesPage from './pages/RepositoriesPage/RepositoriesPage';
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
@@ -23,7 +22,6 @@ function App() {
         <Route path="/ranking" element = {<RankingPage/>} />
         <Route path="/repositories" element = {<RepositoriesPage />} />
       </Routes>
-    </Router>
   );
 }
 
