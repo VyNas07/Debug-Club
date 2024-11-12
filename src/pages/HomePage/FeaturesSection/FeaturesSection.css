@@ -50,6 +50,9 @@
 }
 
 @media (max-width: 1024px) {
+    .feature-item:hover {
+        transform: none;
+    }
     .features-list {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;

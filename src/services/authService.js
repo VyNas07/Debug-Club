@@ -37,7 +37,7 @@ export const githubLogin = async () => {
 };
 
 // Função para obter o username do GitHub
-const getGithubUsername = async (token) => {
+export const getGithubUsername = async (token) => {
     const response = await fetch('https://api.github.com/user', {
         headers: {
             Authorization: `token ${token}`,

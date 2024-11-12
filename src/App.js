@@ -9,6 +9,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage';
 import ProfileEdit from './pages/ProfileEdit/ProfileEdit';
 import RankingPage from './pages/RankingPage/RankingPage';
 import RepositoriesPage from './pages/RepositoriesPage/RepositoriesPage';
+import Dashboard from './pages/DashboardPage/Dashboard';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/profileedit" element = {<ProfileEdit />} />
         <Route path="/ranking" element = {<RankingPage/>} />
         <Route path="/repositories" element = {<RepositoriesPage />} />
+        <Route path="/dashboard" element = {<Dashboard />} />
       </Routes>
       </Router>
   );
