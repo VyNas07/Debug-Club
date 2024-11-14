@@ -72,7 +72,10 @@ const Header2 = () => {
         <div className="hamburger-dropdown">
           <a href="/ranking">Ranking</a>
           <a href="/dashboard">Dashboard</a>
-          <a href="/repositorios">Repositórios</a>
+
+
+          <a href="/repositories">Repositórios</a>
+
           <button onClick={handleLogout} className="menu-option">Sair</button>
         </div>
       )}
