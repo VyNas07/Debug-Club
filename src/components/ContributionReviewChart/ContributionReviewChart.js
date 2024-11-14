@@ -1,5 +1,6 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
+import { useEffect, useState } from 'react';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -9,6 +10,7 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
+import {getUserContributionCounts} from '../countCollectionDocuments'
 
 // elementos necessários p o gráfico de barras
 ChartJS.register(
@@ -20,13 +22,32 @@ ChartJS.register(
     Legend
 );
 
-function ContributionReviewChart() {
+function ContributionReviewChart({userId}) {
+    const [contributionData, setContributionData] = useState({
+        totalIssues: 0,
+        totalCommits: 0,
+        totalPullRequests: 0,
+        totalForks: 0,
+      });
+
+      useEffect(() => {
+        const fetchContributionData = async () => {
+          const { totalIssues, totalCommits, totalPullRequests, totalForks } = await getUserContributionCounts(userId);
+          setContributionData({
+            totalIssues,
+            totalCommits,
+            totalPullRequests,
+            totalForks,
+          });
+        };
+        fetchContributionData();
+  }, [userId]);
     const data = {
         labels: ['PR´s', 'Commits', 'Issues criadas', 'Forks'],
         datasets: [
             {
                 label: 'Contribuições',
-                data: [200, 105, 2113, 600],
+                data: [contributionData.totalPullRequests, contributionData.totalCommits, contributionData.totalIssues, contributionData.totalForks],
                 backgroundColor: [
                     '#FF6B6B',
                     '#FFD93D',

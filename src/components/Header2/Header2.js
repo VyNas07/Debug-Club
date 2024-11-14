@@ -58,8 +58,8 @@ const Header2 = () => {
       {/* Menu com links normais - telas grandes */}
       <div className="nav-links">
         <Link to="/ranking">Ranking</Link>
-        <Link to="#dashboard">Dashboard</Link>
-        <Link to="#repositorios">Repositórios</Link>
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/repositories">Repositórios</Link>
       </div>
 
       {/* Menu Hamburguer para telas menores */}
@@ -71,8 +71,8 @@ const Header2 = () => {
       {showHamburgerMenu && (
         <div className="hamburger-dropdown">
           <a href="/ranking">Ranking</a>
-          <a href="#dashboard">Dashboard</a>
-          <a href="#repositorios">Repositórios</a>
+          <a href="/dashboard">Dashboard</a>
+          <a href="/repositorios">Repositórios</a>
           <button onClick={handleLogout} className="menu-option">Sair</button>
         </div>
       )}
