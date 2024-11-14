@@ -99,7 +99,7 @@ function Dashboard({ userId }) {
           </div>
 
           <div className="reviews">
-            <h3>Contribuições:</h3>
+            <h3 className='titleContributions'>Contribuições:</h3>
             <ContributionReviewChart userId={userId} />
           </div>
         </div>
@@ -126,13 +126,8 @@ function Dashboard({ userId }) {
 
           <div className="contributions">
             <div className="chart">
-              <h3>Histórico de Contribuições:</h3>
-              <ContributionChart
-                issues={githubData.issues}
-                commits={githubData.commits}
-                pullRequests={githubData.pullRequests}
-                forks={githubData.forks}
-              />
+              <h3>Distribuição de Pontos: </h3>
+              <ContributionChart userId={userId} />
             </div>
           </div>
         </div>
