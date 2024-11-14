@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { githubLogin, checkNameAvailability, registerUser } from '../../../services/authService';
 import './MainRegistration.css';
 import { Link, useNavigate } from "react-router-dom";
@@ -11,17 +11,22 @@ const MainRegistration = () => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [confirmationMessage, setConfirmationMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [githubToken, setGithubToken] = useState('');
     const [githubUsername, setGithubUsername] = useState('');
+    const [integrationInProgress, setIntegrationInProgress] = useState(false);
     const navigate = useNavigate();
+
+    // Função para verificar se a integração foi concluída
+    const checkIntegrationStatus = () => {
+        return !integrationInProgress;
+    };
 
     const handleGitHubLogin = async () => {
         const result = await githubLogin();
         if (result.success) {
             setGithubToken(result.token);
-            setGithubUsername(result.username); // Armazena o username do GitHub
+            setGithubUsername(result.username);
             console.log('GitHub login bem-sucedido:', result);
         } else {
             setErrorMessage(result.error);
@@ -40,7 +45,7 @@ const MainRegistration = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrorMessage('');
-
+    
         if (!validateName(name)) {
             setErrorMessage('O nome deve ter no mínimo 5 caracteres e no máximo 20.');
             return;
@@ -57,7 +62,9 @@ const MainRegistration = () => {
             setErrorMessage('Conexão com o GitHub não foi realizada. Por favor, autentique-se com o GitHub.');
             return;
         }
+    
         try {
+            // Verifica disponibilidade do nome
             const isNameAvailable = await checkNameAvailability(name);
             if (!isNameAvailable) {
                 setErrorMessage('Este nome já está em uso.');
@@ -66,24 +73,22 @@ const MainRegistration = () => {
 
             // Registro do usuário no Firebase
             await registerUser(name, password, githubUsername);
-            console.log('Usuário registrado com sucesso:', name);
-
-            // Armazenar GitHubToken e GitHubUsername no Firestore após confirmação de cadastro
+    
+            // Salva as informações do GitHub no Firestore
             const user = auth.currentUser;
             await setDoc(doc(db, 'users', user.uid), {
-                githubUsername, // Armazena o username do GitHub
+                githubUsername,
                 githubToken
             }, { merge: true });
-
-            // Integração do GitHub com o token
+    
+            // Redireciona para a tela de edição de perfil
+            navigate('/profileedit');
+    
+            // Inicia a integração do GitHub em segundo plano após navegação
+            setIntegrationInProgress(true);
             await integrateGithubData(githubUsername, user.uid);
-
-            setConfirmationMessage('Cadastro realizado com sucesso! Issues integradas.');
-            setName('');
-            setPassword('');
-            setConfirmPassword('');
-            setErrorMessage('');
-            navigate('/profileedit'); // Redireciona para a página de perfil após cadastro bem-sucedido
+            setIntegrationInProgress(false);
+    
         } catch (error) {
             setErrorMessage(error.message);
         }
@@ -136,7 +141,6 @@ const MainRegistration = () => {
                         </div>
                     </div>
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
-                    {confirmationMessage && <p className="confirmation-message">{confirmationMessage}</p>}
                     <div className="entrar">
                         <p>Já tem uma conta?
                             <Link to='/login' className="criar">Entrar</Link>

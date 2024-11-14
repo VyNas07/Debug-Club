@@ -1,4 +1,5 @@
 import { doc, setDoc } from 'firebase/firestore';
+import axios from 'axios';
 
 // Função para buscar issues do usuário
 export const fetchIssues = async (username, token) => {
@@ -90,7 +91,7 @@ export const fetchForks = async (username, token) => {
   }
 };
 
-
+// Função para salvar dados no Firestore
 export const saveDataToFirestore = async (collectionName, data, userId, db) => {
   try {
     const id = data.sha || data.id; // Use `sha` ou `id` como identificador
@@ -110,4 +111,17 @@ export const saveDataToFirestore = async (collectionName, data, userId, db) => {
 };
 
 
-
+// Função para buscar os repositórios de um usuário do GitHub
+export const fetchRepos = async (username, token) => {
+  try {
+    const response = await axios.get(`https://api.github.com/users/${username}/repos`, {
+      headers: {
+        Authorization: `token ${token}`
+      }
+    });
+    return response.data;  // Retorna a lista de repositórios
+  } catch (error) {
+    console.error('Erro ao buscar repositórios:', error);
+    throw error;  // Lança o erro para que você possa tratá-lo no lugar onde chamou a função
+  }
+};
