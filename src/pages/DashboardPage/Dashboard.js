@@ -8,6 +8,7 @@ import { getUserContributionCounts } from '../../components/countCollectionDocum
 import { db } from '../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
+
 function Dashboard({ userId }) {
   const [githubData, setGithubData] = useState({
     issues: 0,
@@ -23,9 +24,11 @@ function Dashboard({ userId }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+
   // Função para buscar perfil do usuário
   const fetchUserProfile = async (userId) => {
     if (!userId) return;
+
 
     try {
       const userDocRef = doc(db, 'users', userId);
@@ -46,6 +49,7 @@ function Dashboard({ userId }) {
     }
   };
 
+
   // Função para determinar o título do usuário com base na pontuação
   const getUserClass = (score) => {
     if (score >= 500) return "Resolutivo Supremo";
@@ -56,6 +60,7 @@ function Dashboard({ userId }) {
     return "Explorador de Bugs";
   };
 
+
   useEffect(() => {
     const fetchGithubData = async () => {
       if (!userId) {
@@ -63,6 +68,7 @@ function Dashboard({ userId }) {
         setLoading(false);
         return;
       }
+
 
       try {
         await fetchUserProfile(userId);
@@ -76,16 +82,20 @@ function Dashboard({ userId }) {
       }
     };
 
+
     fetchGithubData();
   }, [userId]);
+
 
   if (loading) {
     return <div>Carregando dados...</div>;
   }
 
+
   if (error) {
     return <div>{error}</div>;
   }
+
 
   return (
     <div className="header-content">
@@ -98,11 +108,13 @@ function Dashboard({ userId }) {
             <p className="role">{getUserClass(score)}</p>
           </div>
 
+
           <div className="reviews">
-            <h3 className='titleContributions'>Contribuições:</h3>
+            <h3>Contribuições:</h3>
             <ContributionReviewChart userId={userId} />
           </div>
         </div>
+
 
         <div className="second-container-separate">
           <div className="progress">
@@ -112,6 +124,7 @@ function Dashboard({ userId }) {
             </div>
             <p>{getUserClass(score)}</p>
           </div>
+
 
           <div className="last-contribution">
             <h3>Última Contribuição:</h3>
@@ -124,9 +137,10 @@ function Dashboard({ userId }) {
             </div>
           </div>
 
+
           <div className="contributions">
             <div className="chart">
-              <h3>Distribuição de Pontos: </h3>
+              <h3>Histórico de Contribuições:</h3>
               <ContributionChart userId={userId} />
             </div>
           </div>
@@ -135,5 +149,6 @@ function Dashboard({ userId }) {
     </div>
   );
 }
+
 
 export default Dashboard;

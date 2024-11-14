@@ -20,8 +20,6 @@ const Header = () => {
         <Link to = '/login'>
         <button className='button-login'>Entrar | Registrar-se</button>
         </Link>
-
-         
          
       </nav>
     </header>
