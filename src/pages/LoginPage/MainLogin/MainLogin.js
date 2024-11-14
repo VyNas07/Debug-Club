@@ -72,7 +72,7 @@ const MainLogin = () => {
           </div>
           <div className="entrar">
             <p>Ainda não tem conta?
-              <Link to='/registration' className="criar">Criar</Link>
+              <Link to='/registration' className="criar"> Criar</Link>
             </p>
             <input type="submit" value="Entrar" />
           </div>

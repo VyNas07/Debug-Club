@@ -54,8 +54,8 @@ function ContributionReviewChart({userId}) {
                     '#4CAF50',
                     '#808080', 
                 ],
-                barThickness: 15, 
-                maxBarThickness: 20, 
+                barThickness: 20, 
+                maxBarThickness: 30, 
                 categoryPercentage: 0.5, 
                 barPercentage: 0.5, 
             },
@@ -98,7 +98,7 @@ function ContributionReviewChart({userId}) {
     };
 
     return (
-        <div style={{ width: '100%', maxWidth: '400px', height: '250px', margin: '0 auto' }}>
+        <div style={{ width: '100%', maxWidth: '400px', height: '300px', margin: '0 auto' }}>
             <Bar data={data} options={options} />
         </div>
     );
