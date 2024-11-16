@@ -24,7 +24,7 @@ function Dashboard() {
 
           <div className="reviews">
             <h3>Contribuições:</h3>
-            <ContributionReviewChart userId={userId} />
+            <ContributionReviewChart />
           </div>
         </div>
 

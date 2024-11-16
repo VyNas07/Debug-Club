@@ -12,6 +12,7 @@ import RepositoriesPage from './pages/RepositoriesPage/RepositoriesPage';
 import Dashboard from './pages/DashboardPage/Dashboard';
 
 import './App.css';
+import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 
 function App() {
   const [userId, setUserId] = useState(null);  // Usando state para guardar o userId
@@ -48,6 +49,7 @@ function App() {
         <Route path="/ranking" element={<RankingPage />} />
         <Route path="/repositories" element={<RepositoriesPage />} />
         <Route path="/dashboard" element={<Dashboard userId={userId} />} />
+        <Route path="/loading" element={<LoadingScreen />} />
       </Routes>
     </Router>
   );
