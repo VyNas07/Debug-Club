@@ -2,6 +2,7 @@ import React from 'react';
 import Header2 from '../../components/Header2/Header2';
 import '../RepositoriesPage/RepositoriesPage.css';
 import GithubIcon from '../../assets/IMG-ProfilePage/github.png';
+import Rodape from '../../components/Footer/Footer';
 
 const repositories = [
   { title: 'Erro de "403 Forbidden" ao acessar áreas restritas', user: 'arthurlima05', status: 'Aberta', date: '24/03/2024' },
@@ -24,7 +25,7 @@ function RepositoriesPages() {
           {repositories.map((repo, index) => (
             <li key={index} className="repository-item">
               <div className="repo-info">
-                <img src={GithubIcon} className="repo-icon"/>
+                <img src={GithubIcon} className="repo-icon" alt="GitHub Icon"/>
                 <div className="repo-detail">
                 <span className="repo-title">{repo.title}</span>
                 <span className="repo-user">{repo.user}</span>
@@ -44,6 +45,7 @@ function RepositoriesPages() {
         </ul>
         </div>
       </main>
+      <Rodape />
     </div>
   );
 }

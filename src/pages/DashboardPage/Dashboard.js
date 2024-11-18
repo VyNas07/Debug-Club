@@ -8,6 +8,7 @@ import { getUserContributionCounts } from '../../components/countCollectionDocum
 import { db } from '../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import LoadingScreen from '../../components/LoadingScreen/LoadingScreen';
+import Rodape from '../../components/Footer/Footer';
 
 
 function Dashboard({ userId }) {
@@ -147,6 +148,7 @@ function Dashboard({ userId }) {
           </div>
         </div>
       </div>
+      <Rodape />
     </div>
   );
 }
