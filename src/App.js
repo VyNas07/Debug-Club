@@ -15,26 +15,28 @@ import './App.css';
 import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 
 function App() {
-  const [userId, setUserId] = useState(null);  // Usando state para guardar o userId
+  const [userId, setUserId] = useState(null);
+  const [loadingAuth, setLoadingAuth] = useState(true); // Estado para carregamento da autenticação
 
   useEffect(() => {
     const auth = getAuth();
-    
+
     // Observa o estado de autenticação
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // Se o usuário estiver logado, guarda o userId
-        setUserId(user.uid);
+        setUserId(user.uid); // Define o userId se o usuário estiver autenticado
       } else {
-        // Se o usuário não estiver logado, reseta o userId
-        setUserId(null);
+        setUserId(null); // Reseta o userId se não houver usuário autenticado
       }
+      setLoadingAuth(false); // Finaliza o carregamento
     });
+
+    return () => unsubscribe(); // Limpa o observador ao desmontar o componente
   }, []);
 
-  // Não renderiza o dashboard até que o userId esteja disponível
-  if (userId === null) {
-    return <div>Carregando...</div>;
+  // Exibe a tela de carregamento enquanto verifica a autenticação
+  if (loadingAuth) {
+    return <LoadingScreen />;
   }
 
   return (

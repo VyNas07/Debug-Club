@@ -32,6 +32,7 @@ function ContributionReviewChart({userId}) {
 
       useEffect(() => {
         const fetchContributionData = async () => {
+            console.log('Buscando dados para userId:', userId)
           const { totalIssues, totalCommits, totalPullRequests, totalForks } = await getUserContributionCounts(userId);
           setContributionData({
             totalIssues,

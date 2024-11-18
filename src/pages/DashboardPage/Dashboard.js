@@ -7,6 +7,7 @@ import ContributionReviewChart from '../../components/ContributionReviewChart/Co
 import { getUserContributionCounts } from '../../components/countCollectionDocuments';
 import { db } from '../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
+import LoadingScreen from '../../components/LoadingScreen/LoadingScreen';
 
 
 function Dashboard({ userId }) {
@@ -88,7 +89,7 @@ function Dashboard({ userId }) {
 
 
   if (loading) {
-    return <div>Carregando dados...</div>;
+    return <LoadingScreen />;
   }
 
 
@@ -111,7 +112,7 @@ function Dashboard({ userId }) {
 
           <div className="reviews">
             <h3>Contribuições:</h3>
-            <ContributionReviewChart />
+            <ContributionReviewChart userId = {userId}/>
           </div>
         </div>
 
