@@ -10,7 +10,7 @@
     max-width: 1200px;
     margin: 0 auto;
     flex-wrap: wrap;
-    gap: 4em;
+    gap: 0;
     margin-top: 2%;
     display: flex;
 }
@@ -18,15 +18,23 @@
 .container-separate {
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 1em;
+    width: 35%;
+    margin-right: -200px;
+    
 }
 
 
 .second-container-separate{
-    width: 65%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 1em;
+}
+
+.container-separate, .second-container-separate {
+    flex: 1 1 45%; /* Ocupam 45% do container geral e ajustam-se conforme o espaço */
+    min-width: 300px; /* Defina um valor mínimo para evitar colapsos */
 }
 
 .profile {
@@ -36,6 +44,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 60%;
 }
 
 .profile img{
@@ -50,7 +59,7 @@
 
 .profile h2 {
     margin-top: 10px;
-    color: rgb(204, 202, 202);
+    color: rgb(255, 255, 255);
     font-size: 1.5em;
 }
 
@@ -117,9 +126,19 @@
     align-items: center;
 }
 
+.contribution-detail{
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+}
+
+.contribution-detail:last-child {
+    border-bottom: none;
+  }
+
 .contribution-detail p {
     margin: 5px 0;
 }
+
 
 .status {
     color: #ff3b3b;
@@ -128,7 +147,7 @@
 .status-date{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .reviews {
@@ -137,6 +156,11 @@
     background-color: #fafafa;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 60%;
+}
+
+.reviews h3{
+    color: #4A90E2;
 }
 
 .reviews .review-summary {
@@ -150,17 +174,7 @@
     font-weight: bold;
 }
 
-.negative {
-    color: #ff4d4d;
-}
 
-.neutral {
-    color: #ffd700;
-}
-
-.positive {
-    color: #4caf50;
-}
 
 .contributions {
     flex: 3;
@@ -185,4 +199,83 @@
     color: #003366;
 }
 
+.titleContributions {
+    color: #4A90E2
+}
 
+/*responsividade aqui*/
+
+/* Estilo padrão para telas grandes */
+.container-general {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em; /* Reduz o gap padrão entre as divs */
+    margin-top: 2%;
+}
+
+.container-separate {
+    width: 30%; /* Ajuste para telas grandes */
+    display: flex;
+    flex-direction: column;
+    gap: 1em; /* Reduzido para menos espaço interno */
+}
+
+.second-container-separate {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em; /* Reduzido para economizar espaço interno */
+}
+
+.container-separate, .second-container-separate {
+    flex: 1 1 45%; /* Ajusta para ocupar menos espaço e permitir flexibilidade */
+    min-width: 300px;
+}
+
+/* Responsividade para tablets e dispositivos móveis */
+@media (max-width: 768px) {
+    .container-general {
+        flex-direction: column;
+        width: 100%;
+        gap: 1em;
+    }
+
+    .container-separate, .second-container-separate {
+        width: 100%;
+        gap: 0.5em; /* Reduz o espaço entre elementos internos */
+        align-items: center;
+    }
+}
+
+/* Responsividade para dispositivos móveis menores */
+@media (max-width: 480px) {
+    .container-general {
+        padding: 10px;
+        gap: 0.5em; /* Mais reduzido em telas pequenas */
+        width: 100% !important;
+    }
+
+    .container-separate, .second-container-separate {
+        
+        gap: 1.5em !important; 
+    }
+
+    .profile{
+        width: 90%;
+    }
+
+    .progress{
+        width: 100%;
+    }
+
+    .reviews{
+        width: 90%;
+    }
+
+    .contributions{
+        margin-bottom: 1em;
+    }
+}

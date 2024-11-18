@@ -1,5 +1,6 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
+import { useEffect, useState } from 'react';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -9,6 +10,7 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
+import {getUserContributionCounts} from '../countCollectionDocuments'
 
 // elementos necessários p o gráfico de barras
 ChartJS.register(
@@ -20,21 +22,41 @@ ChartJS.register(
     Legend
 );
 
-function ContributionReviewChart() {
+function ContributionReviewChart({userId}) {
+    const [contributionData, setContributionData] = useState({
+        totalIssues: 0,
+        totalCommits: 0,
+        totalPullRequests: 0,
+        totalForks: 0,
+      });
+
+      useEffect(() => {
+        const fetchContributionData = async () => {
+            console.log('Buscando dados para userId:', userId)
+          const { totalIssues, totalCommits, totalPullRequests, totalForks } = await getUserContributionCounts(userId);
+          setContributionData({
+            totalIssues,
+            totalCommits,
+            totalPullRequests,
+            totalForks,
+          });
+        };
+        fetchContributionData();
+  }, [userId]);
     const data = {
         labels: ['PR´s', 'Commits', 'Issues criadas', 'Forks'],
         datasets: [
             {
                 label: 'Contribuições',
-                data: [200, 105, 2113, 600],
+                data: [contributionData.totalPullRequests, contributionData.totalCommits, contributionData.totalIssues, contributionData.totalForks],
                 backgroundColor: [
                     '#FF6B6B',
                     '#FFD93D',
                     '#4CAF50',
                     '#808080', 
                 ],
-                barThickness: 15, 
-                maxBarThickness: 20, 
+                barThickness: 20, 
+                maxBarThickness: 30, 
                 categoryPercentage: 0.5, 
                 barPercentage: 0.5, 
             },
@@ -77,7 +99,7 @@ function ContributionReviewChart() {
     };
 
     return (
-        <div style={{ width: '100%', maxWidth: '400px', height: '250px', margin: '0 auto' }}>
+        <div style={{ width: '100%', maxWidth: '400px', height: '300px', margin: '0 auto' }}>
             <Bar data={data} options={options} />
         </div>
     );
