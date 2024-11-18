@@ -42,6 +42,7 @@ const MainLogin = () => {
     } catch (error) {
       setErrorMessage('Erro ao fazer login.');
       console.error('Erro ao fazer login:', error);
+      console.log('Erro na MainLogin');
     }
   };
 

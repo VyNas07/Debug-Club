@@ -27,6 +27,7 @@ function App() {
         setUserId(user.uid); // Define o userId se o usuário estiver autenticado
       } else {
         setUserId(null); // Reseta o userId se não houver usuário autenticado
+        console.log('Usuário não autenticado. problema no APP.js ');
       }
       setLoadingAuth(false); // Finaliza o carregamento
     });
