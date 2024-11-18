@@ -26,7 +26,7 @@ function ContributionChart({ userId }) {
       {
         label: 'Pontos (%)',
         data: [0, 0, 0, 0],
-        backgroundColor: ['#FF6B6B', '#FFD93D', '#4CAF50', '#808080'],
+        backgroundColor: ['#1E90FF', '#FFD700', '#4682B4', '#D3D3D3'],
         borderColor: ['#FF6B6B', '#FFD93D', '#4CAF50', '#808080'],
         borderWidth: 1,
       },
@@ -81,7 +81,7 @@ function ContributionChart({ userId }) {
             {
               label: 'Pontos(%)',
               data: [prPercentage, commitPercentage, issuePercentage, forkPercentage],
-              backgroundColor: ['#FF6B6B', '#FFD93D', '#4CAF50', '#808080'],
+              backgroundColor: ['#1E90FF', '#FFD700', '#4682B4', '#D3D3D3'],
               borderColor: ['#FF6B6B', '#FFD93D', '#4CAF50', '#808080'],
               borderWidth: 1,
             },
