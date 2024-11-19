@@ -28,19 +28,16 @@ Com foco em **gamificação e interatividade**, o projeto incentiva o aprendizad
 
 ## **Funcionalidades**
 - **Compartilhamento de Repositórios**:  
-  Adicione links de repositórios do GitHub para colaboração.  
+  Adicione links de repositórios do GitHub para colaboração.   
 
-- **Busca e Filtros Avançados**:  
-  Encontre repositórios e problemas específicos rapidamente.  
+- **Ranking Global**:  
+  Incentive contribuições com rankings baseados em atividades e engajamento.
 
-- **Sistema de Feedback**:  
-  Deixe comentários construtivos diretamente em repositórios e issues.  
+- **DashBoard**:
+  Analise sua evolução e contribuições.
 
-- **Perfil Personalizado**:  
-  Mostre suas contribuições e interaja com outros usuários.  
-
-- **Ranking Global** *(Em Desenvolvimento)*:  
-  Incentive contribuições com rankings baseados em atividades e engajamento.  
+- **Cálculo de pontuação**:
+  Sistema que calcula a sua pontuação global baseado nas suas contribuições.
 
 ---
 
