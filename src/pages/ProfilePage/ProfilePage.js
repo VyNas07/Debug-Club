@@ -127,9 +127,11 @@ const ProfilePage = () => {
       <div className="container">
         <div className="profile-card">
           <Link to='/profileedit'>
+            <div className="img-separated">
             <button className="edit-button">
               <img src={iconeEdit} alt="botão editar" />
             </button>
+            </div>
           </Link>
           <div className="profile-img">
             <img src={profile.profilePicture} alt="Profile" />
@@ -149,7 +151,7 @@ const ProfilePage = () => {
             <div className="ranking-section">
               <div className="ranking-card">
                 <h3>Ranking Atual:</h3>
-                <span className="ranking-value">{ranking}</span> {/* Renderiza o ranking do usuário */}
+                <span className="ranking-value">{ranking}</span> 
               </div>
               <div className="ranking-card">
                 <h3>Pontuação:</h3>

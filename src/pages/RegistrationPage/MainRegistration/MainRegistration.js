@@ -143,7 +143,7 @@ const MainRegistration = () => {
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                     <div className="entrar">
                         <p>Já tem uma conta?
-                            <Link to='/login' className="criar">Entrar</Link>
+                            <Link to='/login' className="criar"> Entrar</Link>
                         </p>
                         <input type="submit" value="Cadastrar" />
                     </div>

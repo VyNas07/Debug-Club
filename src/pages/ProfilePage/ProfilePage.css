@@ -194,3 +194,76 @@ body {
 .contribution-icon {
   margin-right: 8px;
 }
+
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .profile-card {
+    width: 90%;
+    margin: 20px 0;
+    min-height: auto;
+  }
+
+  .main {
+    width: 100%; 
+    padding: 15px;
+  }
+
+  .ranking-card {
+    width: 100%; 
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .profile-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .perfilname {
+    font-size: 1.2em; 
+  }
+
+  .profession {
+    font-size: 0.9rem;
+  }
+
+  .bio {
+    font-size: 0.8rem;
+  }
+
+  .main {
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .profile-card {
+    padding: 15px;
+  }
+
+  .profile-card img {
+    width: 70px;
+    height: 70px;
+  }
+  .img-separated img{
+    width: 30px;
+  }
+
+  .ranking-card {
+    padding: 10px;
+  }
+
+  .bio {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}

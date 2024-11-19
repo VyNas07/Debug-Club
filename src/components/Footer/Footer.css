@@ -60,7 +60,7 @@
     font-size: 1.2rem;
   }
   
-  /* Responsividade */
+  /* responsividade */
   @media (max-width: 768px) {
     .rodape-content {
       flex-direction: column;
@@ -76,4 +76,40 @@
       margin-bottom: 20px;
     }
   }
+
+  @media (max-width: 576px) {
+    .rodape-content {
+      width: 90%; 
+    }
+  
+    .logo-img {
+      width: 80%;
+    }
+  
+    .contato-rodape {
+      padding: 0; 
+    }
+  
+    .contato-rodape h3 {
+      font-size: 1.5rem;
+    }
+  
+    .contato-rodape p {
+      font-size: 1rem; 
+    }
+  
+    .icons-rodape img {
+      width: 25px;
+      height: 25px; 
+    }
+  
+    .endereco-rodape {
+      padding-top: 2%;
+    }
+  
+    .endereco-rodape p {
+      font-size: 1rem; 
+    }
+  }
+  
   

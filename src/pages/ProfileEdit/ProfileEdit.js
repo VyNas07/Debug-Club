@@ -106,9 +106,11 @@ function ProfileEditPage() {
               style={{ display: "none" }} />
 
             {!imagePreview && (
+              <div className="pick-button">
               <label htmlFor="profilePicture" className="custom-file-upload">
                 <span>Escolher foto</span>
               </label>
+              </div>
             )}
 
             {imagePreview && (
