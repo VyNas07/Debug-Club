@@ -12,7 +12,6 @@ import { doc, getDoc } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import LoadingScreen from '../../components/LoadingScreen/LoadingScreen';// Importa a função de atualização de ranking
 
-import { updateRanking } from '../../services/rankingService'; 
 
 const ProfilePage = () => {
   const [userId, setUserId] = useState(null);
