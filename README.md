@@ -1,97 +1,62 @@
-# Getting Started with Create React App
+![Banner do DebugClub](src/assets/IMG-Gerais/DebugClub%20(1).png)
+# **DebugClub**
+> **"Promovendo colaboração e aprendizado em projetos de código aberto."**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Status](https://img.shields.io/badge/status-Em%20Desenvolvimento-yellow)]()  
+[![License](https://img.shields.io/badge/license-MIT-blue)]()  
+[![React](https://img.shields.io/badge/built%20with-React-blue)]()  
 
-## Available Scripts
+---
+## **Índice**
+1. [Sobre o Projeto](#sobre-o-projeto)  
+2. [Funcionalidades](#funcionalidades)  
+3. [Tecnologias Utilizadas](#tecnologias-utilizadas)  
+4. [Como Rodar o Projeto e Contribuir](#como-rodar-o-projeto-e-contribuir)  
+5. [Estrutura do Projeto](#estrutura-do-projeto)  
+6. [Autores](#autores)  
+7. [Licença](#licença)  
+8. [Contato](#contato)  
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## **Sobre o Projeto**
+O **DebugClub** é uma plataforma colaborativa que conecta desenvolvedores em torno de um objetivo comum: **resolver bugs e aprimorar repositórios de código aberto**.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Com foco em **gamificação e interatividade**, o projeto incentiva o aprendizado coletivo, ajudando desenvolvedores a crescerem em suas jornadas técnicas e contribuírem para a comunidade de código aberto.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## **Funcionalidades**
+- **Compartilhamento de Repositórios**:  
+  Adicione links de repositórios do GitHub para colaboração.   
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Ranking Global**:  
+  Incentive contribuições com rankings baseados em atividades e engajamento.
 
-### `npm run build`
+- **DashBoard**:
+  Analise sua evolução e contribuições.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Cálculo de pontuação**:
+  Sistema que calcula a sua pontuação global baseado nas suas contribuições.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## **Tecnologias Utilizadas**
+### **Frontend:**
+- React.js  
+- CSS  
 
-### `npm run eject`
+### **Backend:**
+- Firebase  
+- Node.js
+- JavaScript
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **APIs:**
+- GitHub API para integração e coleta de dados de repositórios.  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-# This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# Debug Club
-
-> # 486f01747ef8a9d7de6babd6292ce1cc47208eb1
-
-## Descrição do Projeto
-
-O **DebugClub** é um site colaborativo onde desenvolvedores podem compartilhar seus repositórios do GitHub. O objetivo é ajudar uns aos outros a resolver bugs e problemas de código, promovendo a colaboração e o aprendizado entre programadores.
-
-## Tecnologias Utilizadas
-
-- **HTML**: Estruturação das páginas do site.
-- **CSS**: Estilização para uma interface atraente e responsiva.
-- **JavaScript**: Interatividade e manipulação do DOM.
-- **React**: Construção de componentes reutilizáveis e gerenciamento do estado da aplicação.
-
-## Funcionalidades
-
-- **Compartilhamento de Repositórios**: Usuários podem adicionar links de repositórios do GitHub para que outros possam visualizar e ajudar.
-- **Busca e Filtros**: Facilita a busca por repositórios específicos ou por problemas comuns.
-- **Sistema de Comentários**: Permite que os usuários deixem feedback e sugestões diretamente nos repositórios.
-- **Perfil de Usuário**: Cada usuário pode criar um perfil para exibir suas contribuições e repositórios compartilhados.
-
-## Como Contribuir
+## Como Rodar o Projeto e Contribuir
 
 1. **Clone o repositório**:
 
@@ -114,11 +79,52 @@ O **DebugClub** é um site colaborativo onde desenvolvedores podem compartilhar 
 
 4. **Contribuições**: Fique à vontade para enviar pull requests com melhorias ou novas funcionalidades!
 
-## Autores
+---
 
+## **Estrutura do projeto**
+ ```bash
+   /debugclub
+├── /public
+│   ├── index.html
+│   └── ...
+├── /src
+│   ├── /assets
+│   ├── /components
+│   │   ├── Header
+│   │   ├── Footer
+│   │   └── ...
+│   ├── /pages
+│   │   ├── HomePage
+│   │   ├── LoginPage
+│   │   ├── RegistrationPage
+│   │   ├── ProfilePage
+│   │   ├── ProfileEdit
+│   │   ├── RankingPage
+│   │   ├── RepositoriesPage
+│   │   ├── DashboardPage
+│   │   └── ErrorPage
+│   ├── /services
+│   │   ├── authService.js
+│   │   ├── githubIntegration.js
+│   │   ├── rankingService.js
+│   │   └── scoreService.js
+│   ├── App.js
+│   ├── firebase.js
+│   ├── index.js
+│   └── ...
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
+
+   ```
+---
+
+## **Autores**
+
+- [Vyktor Nascimento](https://github.com/VyNas07)
 - [Arthur Lima](https://github.com/ArthurLima05)
 - [Marcello Fernandes](https://github.com/marcellofernandesads)
-- [Vyktor Nascimento](https://github.com/VyNas07)
 - [Larissa Lima](https://github.com/lalinhos)
 - [João Miguel](https://github.com/Joao-Miguel-F)
 - [João Rietra](https://github.com/jhrl)
@@ -126,33 +132,10 @@ O **DebugClub** é um site colaborativo onde desenvolvedores podem compartilhar 
 - [Mariana Ferreira](https://github.com/mwndrly)
 - [Lucas Lima](https://github.com/lblima038)
 - [Ivo Junior](https://github.com/icaj)
+## **Licença**
+Este projeto é licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
+---
 
-## Estrutura do Projeto
-
-O projeto está organizado da seguinte forma:
-
-```
-/debugclub
-├── /public
-│   ├── index.html
-│   └── ...
-├── /src
-│   ├── /components
-│   ├── /pages
-│   ├── App.js
-│   ├── index.js
-│   └── ...
-├── package.json
-└── README.md
-```
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## Contato
-
-Para mais informações, entre em contato com qualquer um dos autores ou abra uma issue no repositório.
-
-c49cfb927a36241c0f3da2fc0349137b293455cb
+## **Contato**
+📧 Para dúvidas ou sugestões, entre em contato com qualquer um dos autores ou abra uma issue neste repositório.

@@ -10,7 +10,8 @@ import { Link } from "react-router-dom";
 import { db } from '../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { updateRanking } from '../../services/rankingService'; // Importa a função de atualização de ranking
+import LoadingScreen from '../../components/LoadingScreen/LoadingScreen';// Importa a função de atualização de ranking
+
 
 const ProfilePage = () => {
   const [userId, setUserId] = useState(null);
@@ -82,7 +83,7 @@ const ProfilePage = () => {
   
   // Exibe "Carregando" enquanto os dados estão sendo carregados
   if (loading) {
-    return <p>Carregando...</p>;
+    return <LoadingScreen />;
   }
   
   // Verifica se o usuário não está logado

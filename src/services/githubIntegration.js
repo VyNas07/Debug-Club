@@ -1,6 +1,8 @@
-    import { fetchIssues, saveDataToFirestore, fetchCommits, fetchPullRequests, fetchForks } from './githubUtils';
-  import { addPoints } from './scoreService';
+import { fetchIssues, saveDataToFirestore, fetchCommits, fetchPullRequests, fetchForks } from './githubUtils';
+import { addPoints } from './scoreService';
 import { getFirestore } from 'firebase/firestore';
+import { updateRanking } from '../services/rankingService'; 
+
 
   // Obtém o token do GitHub da variável de ambiente
   const token = process.env.REACT_APP_GITHUB_TOKEN;
@@ -51,6 +53,9 @@ totalForks = forks.length;  // Atualiza o total de forks
         await saveDataToFirestore('forks', fork, userId, db);
         await addPoints(userId, 2);
       }
+
+      // Atualizar o ranking dos usuários após a integração dos dados do GitHub
+      await updateRanking();
 
       console.log('Integração de dados do GitHub concluída com sucesso!');
     } catch (error) {
