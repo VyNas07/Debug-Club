@@ -1,3 +1,4 @@
+![Banner do DebugClub](src/assets/IMG-Gerais/DebugClub%20(1).png)
 # **DebugClub**
 > **"Promovendo colaboração e aprendizado em projetos de código aberto."**
 
