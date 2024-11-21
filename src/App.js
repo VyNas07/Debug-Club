@@ -51,7 +51,7 @@ function App() {
         <Route path="/profileedit" element={<ProfileEdit />} />
         <Route path="/ranking" element={<RankingPage />} />
         <Route path="/repositories" element={<RepositoriesPage />} />
-        <Route path="/dashboard" element={<Dashboard userId={userId} />} />
+        <Route path="/dashboard/:userId" element={<Dashboard />} />
         <Route path="/loading" element={<LoadingScreen />} />
       </Routes>
       </Router>

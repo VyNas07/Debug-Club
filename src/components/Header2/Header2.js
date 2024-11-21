@@ -12,6 +12,7 @@ const Header2 = () => {
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false); // Controla o menu hambúrguer
   const navigate = useNavigate();
 
+  // Função para buscar a foto do perfil do usuário
   const fetchUserProfilePicture = async (userId) => {
     const userDocRef = doc(db, 'users', userId);
     const userDoc = await getDoc(userDocRef);
@@ -47,6 +48,13 @@ const Header2 = () => {
     setShowHamburgerMenu(!showHamburgerMenu);
   };
 
+  const handleDashboardClick = () => {
+    const userId = auth.currentUser?.uid;
+    if (userId) {
+      navigate(`/dashboard/${userId}`); // Redireciona para o Dashboard com o userId
+    }
+  };
+
   return (
     <header className="header">
       <div className="logo">
@@ -58,7 +66,7 @@ const Header2 = () => {
       {/* Menu com links normais - telas grandes */}
       <div className="nav-links">
         <Link to="/ranking">Ranking</Link>
-        <Link to="/dashboard">Dashboard</Link>
+        <button onClick={handleDashboardClick} className='buttonDashboard'>Dashboard</button> {/* Alterado para chamar a função de navegação */}
         <Link to="/repositories">Repositórios</Link>
       </div>
 
@@ -71,9 +79,7 @@ const Header2 = () => {
       {showHamburgerMenu && (
         <div className="hamburger-dropdown">
           <a href="/ranking">Ranking</a>
-          <a href="/dashboard">Dashboard</a>
-
-
+          <button onClick={handleDashboardClick} className='buttonDashboard'>Dashboard</button> {/* Alterado para chamar a função de navegação */}
           <a href="/repositories">Repositórios</a>
 
           <button onClick={handleLogout} className="menu-option">Sair</button>

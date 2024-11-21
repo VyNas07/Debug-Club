@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import Header2 from '../../components/Header2/Header2';
+import { useParams } from 'react-router-dom';
 import ProfileIcon from '../../assets/IMG-ProfilePage/profileimg.png';
 import ContributionChart from '../../components/ContributionChart/ContributionChart';
 import ContributionReviewChart from '../../components/ContributionReviewChart/ContributionReviewChart';
@@ -11,7 +12,8 @@ import LoadingScreen from '../../components/LoadingScreen/LoadingScreen';
 import Rodape from '../../components/Footer/Footer';
 
 
-function Dashboard({ userId }) {
+function Dashboard() {
+  const { userId } = useParams();
   const [githubData, setGithubData] = useState({
     issues: 0,
     commits: 0,
@@ -54,14 +56,36 @@ function Dashboard({ userId }) {
 
   // Função para determinar o título do usuário com base na pontuação
   const getUserClass = (score) => {
-    if (score >= 500) return "Resolutivo Supremo";
-    if (score >= 350) return "Arquiteto da Resolução";
-    if (score >= 200) return "Guru do Debugging";
-    if (score >= 100) return "Veterano da Codificação";
-    if (score >= 50) return "Desbravador de Problemas";
+    if (score >= 1000) return "Resolutivo Supremo";
+    if (score >= 600) return "Arquiteto da Resolução";
+    if (score >= 350) return "Guru do Debugging";
+    if (score >= 175) return "Veterano da Codificação";
+    if (score >= 75) return "Desbravador de Problemas";
     return "Explorador de Bugs";
   };
 
+  const getNextUserClass = (score) => {
+    if (score < 75) return "Desbravador de Problemas";
+    if (score < 175) return "Veterano da Codificação";
+    if (score < 350) return "Guru do Debugging";
+    if (score < 600) return "Arquiteto da Resolução";
+    if (score < 1000) return "Resolutivo Supremo";
+    return "Debug Insane"
+  };
+
+  // Função para calcular a porcentagem do progresso para o próximo título
+  const getProgressToNextTitle = (score) => {
+    if (score < 75) return (score / 75) * 100; // Progressão para "Veterano da Codificação"
+    if (score < 175) return ((score - 75) / 100) * 100; // Progressão para "Guru do Debugging"
+    if (score < 350) return ((score - 175) / 175) * 100; // Progressão para "Arquiteto da Resolução"
+    if (score < 600) return ((score - 350) / 250) * 100; // Progressão para "Resolutivo Supremo"
+    if (score < 1000) return ((score - 600) / 400) * 100; // Progressão para "Debug Insane"
+    return 100; // Para quem já tem o título de "Debug Insane"
+  };
+
+const getProgressBarColor = (score) => {
+  return score >= 1000 ? '#FFD700' : '#4A90E2'; // Dourado para 1000 ou mais, verde para menos de 1000
+};
 
   useEffect(() => {
     const fetchGithubData = async () => {
@@ -119,13 +143,19 @@ function Dashboard({ userId }) {
 
 
         <div className="second-container-separate">
-          <div className="progress">
-            <h3>Próximo Título:</h3>
-            <div className="progress-bar">
-              <div className="progress-fill" style={{ width: '80%' }}></div>
-            </div>
-            <p>{getUserClass(score)}</p>
-          </div>
+        <div className="progress">
+  <h3>Próximo Título:</h3>
+  <div className="progress-bar">
+    <div
+      className="progress-fill"
+      style={{
+        width: `${getProgressToNextTitle(score)}%`,
+        backgroundColor: getProgressBarColor(score), // Aplica a cor da barra
+      }}
+    ></div>
+  </div>
+  <p>{getNextUserClass(score)}</p>
+</div>
 
 
           <div className="last-contribution">

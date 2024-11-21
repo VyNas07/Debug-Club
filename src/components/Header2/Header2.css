@@ -25,7 +25,7 @@
   }
   
   .nav-links a {
-    margin: 0px 15px;
+    margin: 0px 20px;
     font-weight: 500;
     transition: transform 0.3s ease;
   }
@@ -96,12 +96,27 @@
     text-align: left;
     border: none;
     display: block;
+    font-weight: 500;
   }
   
   .hamburger-dropdown a:hover {
     background-color: #d3d6d8;
   }
   
+  .hamburger-dropdown .buttonDashboard {
+    background-color: #f0f0f1;
+    border-style: none;
+    color: #4A90E2;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%; /* Garante que o botão ocupe toda a largura */
+  }
+  
+  
+  
+  /* Estilo do botão Sair */
   .hamburger-dropdown button {
     padding: 8px 16px;
     text-align: left;
@@ -109,13 +124,34 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: #d9534f;
+    color: #d9534f; /* Vermelho para o botão Sair */
   }
   
   .hamburger-dropdown button:hover {
     background-color: #fa8682;
     color: #ffffff;
   }
+
+  .buttonDashboard {
+    background-color: #4A90E2;
+    border-style: none;
+    color: white;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .buttonDashboard:hover {
+    transform: scale(1.1);
+  }
+  .hamburger-dropdown .buttonDashboard:hover {
+    background-color: #d3d6d8;
+    color: #4A90E2;
+    transform: scale(1.0);
+    font-weight: none;
+  }
+
   
   /* Ajustes para telas menores */
   @media (max-width: 1024px) {

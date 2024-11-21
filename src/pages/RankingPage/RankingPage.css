@@ -140,14 +140,32 @@
     margin-left: 70%;
     transition: transform 0.3s ease;
   }
+  .top-button-githubList{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    transition: transform 0.3s ease;
+  }
   
   .top-button-github img {
     width: 67% !important; 
     height: 77% !important;
     object-fit: contain;
   }
+  .top-button-githubList img {
+    width: 67% !important; 
+    height: 77% !important;
+    object-fit: contain;
+  }
 
   .top-button-github:hover{
+    transform: scale(1.05);
+  }
+  
+  .top-button-githubList:hover{
     transform: scale(1.05);
   }
   
@@ -380,10 +398,56 @@ table th {
   color: #4F83B6;
   display: flex;
 }
+.info-container {
+  position: relative;
+  display: inline-flex; /* Usando flexbox para alinhar o conteúdo horizontalmente */
+  align-items: center;  /* Alinha os itens verticalmente no centro */
+}
 
+.info-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-left: 5px; /* Adiciona um pequeno espaçamento entre o texto e o ícone */
+}
+
+.info-message {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  max-width: 400px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  z-index: 10;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+.user-name-color {
+  color: #4F83B6;
+}
+/* Responsividade para telas de até 768px */
 
 
 @media (max-width: 768px) {
+  .info-message {
+    max-width: 280px; /* Ajusta a largura da mensagem para telas menores */
+    font-size: 11px;  /* Ajusta o tamanho da fonte */
+    padding: 8px 15px;
+  }
+
+  .info-icon {
+    width: 16px;  /* Diminuindo o ícone para telas menores */
+    height: 16px;
+  }
+
   .ranking-page {
     display: flex;
     flex-direction: column;
