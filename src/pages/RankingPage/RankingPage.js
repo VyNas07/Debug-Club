@@ -10,6 +10,7 @@ import Header2 from '../../components/Header2/Header2';
 import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase';
 import Rodape from '../../components/Footer/Footer';
+import InfoIcon from '../../assets/IMG-Gerais/informacoes.png'
 
 const RankingPage = () => {
   const [topThree, setTopThree] = useState([]);
@@ -132,7 +133,11 @@ const RankingPage = () => {
                   <td>
                     <img src={githubIcon} alt="github" className="github-image" />
                   </td>
-                  <td>PR's</td>
+                  <td>QA</td>
+                    <button className="info-button">
+                      <img src=''></img>
+                    </button>
+
                   <td className="score">{user.score}</td>
                 </tr>
               ))}
