@@ -79,3 +79,25 @@
     height: 28px;
     margin-right: 15px;
   }
+
+  .repo-title {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    color: inherit; /* Mantém a cor do texto original */
+    position: relative; /* Necessário para o pseudo-elemento */
+  }
+  
+  .repo-title::after {
+    content: ""; /* Cria um pseudo-elemento vazio */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Espessura da linha */
+    background-color: currentColor; /* Usa a mesma cor do texto */
+    transition: width 0.3s ease; /* Suaviza a animação */
+  }
+  
+  .repo-title:hover::after {
+    width: 100%; /* Preenche a linha no hover */
+  }
+  
