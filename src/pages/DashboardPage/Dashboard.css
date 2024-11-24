@@ -69,39 +69,7 @@
     font-size: 1.2em;
 }
 
-.progress {
-    flex: 2;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
-.progress h3 {
-    margin-bottom: 10px;
-    color: #4A90E2;
-}
-
-.progress p{
-    color: #003366;
-    font-weight: 600;
-}
-
-.progress-bar {
-    background-color: #e0e0e0;
-    border-radius: 15px;
-    position: relative;
-    height: 30px;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.progress-fill {
-    background-color: #4a90e2;
-    height: 100%;
-    border-radius: 15px;
-    position: absolute;
-}
 
 .last-contribution {
     flex: 2;
@@ -150,30 +118,22 @@
     align-items: flex-end;
 }
 
-.reviews {
+.reviews-dash{
+    margin-top: 20px;
+    padding: 20px;
+    min-height: 400px;
     flex: 1;
     padding: 20px;
     background-color: #fafafa;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 60%;
-}
-
-.reviews h3{
+    margin-bottom: 20px;
+  }
+  
+  .reviews-dash h3{
     color: #4A90E2;
-}
-
-.reviews .review-summary {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-}
-
-.review {
-    text-align: center;
-    font-weight: bold;
-}
-
+  }
 
 
 .contributions {
@@ -182,14 +142,10 @@
     background-color: #f6f6f6;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-.contributions {
-    flex: 2 1;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 15px;
-}
+
 
 .contributions h3{
     color: #4A90E2;

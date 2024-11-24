@@ -135,7 +135,7 @@ const getProgressBarColor = (score) => {
           </div>
 
 
-          <div className="reviews">
+          <div className="reviews-dash">
             <h3>Contribuições:</h3>
             <ContributionReviewChart userId = {userId}/>
           </div>
