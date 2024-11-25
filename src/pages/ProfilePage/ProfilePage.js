@@ -203,7 +203,7 @@ const getProgressBarColor = (score) => {
                 <div className="info-separation">
                 <h3>Ranking Atual:</h3>
                 <button className="info-button" onClick={() => setShowInfoRanking(!showInfoRanking)}>
-                  <img src={infoIcon} className="info-icon"/>
+                  <img src={infoIcon} className="info-icon2"/>
                 </button>
                 {showInfoRanking && (
                         <div className="info-message2"><p>
