@@ -86,12 +86,11 @@ const RankingPage = () => {
                       alt={`${index + 1}st-place`}
                       className={`${index === 0 ? 'one-image' : index === 1 ? 'two-image' : 'three-image'}`}
                     />
-                    <img src={user.profilePicture || profileIcon} alt="Profile" />
+                    <img src={user.profilePicture || profileIcon} alt="Profile" className='img-top3' />
                   </div>
                 </div>
                 <p className="name">
-                  <Link to={`/dashboard/${user.id}`} className='user-name-color'>{user.name}</Link>
-                </p>
+                <Link to={`/dashboard/${user.id}`} className='user-name-color'>{user.name}</Link>                </p>
                 <p className="score">{user.score}</p>
               </div>
             ))}
@@ -209,7 +208,10 @@ const RankingPage = () => {
           </table>
         </div>
       </div>
-      <Rodape />
+      <div className='footer'>
+        <Rodape />
+      </div>
+      
     </div>
   );
 };

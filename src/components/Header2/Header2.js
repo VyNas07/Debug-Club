@@ -66,7 +66,7 @@ const Header2 = () => {
       {/* Menu com links normais - telas grandes */}
       <div className="nav-links">
         <Link to="/ranking">Ranking</Link>
-        <button onClick={handleDashboardClick} className='buttonDashboard'>Dashboard</button> {/* Alterado para chamar a função de navegação */}
+         {/* Alterado para chamar a função de navegação */}
         <Link to="/repositories">Repositórios</Link>
       </div>
 
@@ -79,7 +79,6 @@ const Header2 = () => {
       {showHamburgerMenu && (
         <div className="hamburger-dropdown">
           <a href="/ranking">Ranking</a>
-          <button onClick={handleDashboardClick} className='buttonDashboard'>Dashboard</button> {/* Alterado para chamar a função de navegação */}
           <a href="/repositories">Repositórios</a>
 
           <button onClick={handleLogout} className="menu-option">Sair</button>

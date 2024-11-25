@@ -71,6 +71,7 @@
   .hamburger-menu {
     display: none;
     margin-left: auto;
+    z-index: 9999 !important;
   }
   
   .hamburger-dropdown {
@@ -86,6 +87,7 @@
     align-items: flex-start;
     width: 150px;
     max-width: 100%;
+    z-index: 20;
   }
   
   .hamburger-dropdown a {
@@ -171,12 +173,14 @@
   
     .nav-links {
       display: none;
+      z-index: 5 !important;
     }
   
     .hamburger-menu {
       display: block;
       cursor: pointer;
       margin-left: auto;
+      z-index: 10 !important;
     }
   
     .hamburger-menu img {

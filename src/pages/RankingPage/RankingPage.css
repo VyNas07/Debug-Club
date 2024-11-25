@@ -53,6 +53,7 @@
     position: relative;
     margin-top: -15px;
     gap: 3px;
+    z-index: -2;
 }
 
 
@@ -71,6 +72,7 @@
     font-size: 16px;
     font-weight: bold;
     color:  #6B8BBD;
+    z-index: 300;
   }
   
   .second-card .score, .third-card .score, .winner-card .score {
@@ -105,7 +107,7 @@
     transform: translateX(-50%);
     width: 80px;
     height: 80px;
-    z-index: 10;
+    z-index: 0;
 }
 
 .winner-icon img{
@@ -464,6 +466,7 @@ table th {
     padding: 10px;
     display: flex;
     margin: 0 auto;
+    z-index: 1;
   }
 
   .top-user {
@@ -505,4 +508,34 @@ table th {
   .github-image {
     width: 25%; 
   }
+
+  .footer {
+    display: none !important; 
+  }
 }
+
+@media (max-width: 520px) {
+  .img-top3 {
+    width: 70px !important; /* Aumente o tamanho da largura */
+    height: 70px !important;  /* Aumente a altura para manter a proporção */
+    border-radius: 50%; /* Mantenha o formato circular */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adicione sombra para destaque */
+    margin-top: 10px; /* Ajuste o espaçamento superior, se necessário */
+  }
+
+  .one-image, .two-image, .three-image {
+    position: absolute;
+    top:60px; /* Ajuste a posição vertical */
+    left: 40%; /* Centraliza horizontalmente */
+    
+   
+
+    width: 55% !important; /* Aumenta o tamanho da imagem */
+    height: auto !important; /* Mantém a proporção */
+}
+
+
+  }
+
+ 
+

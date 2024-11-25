@@ -52,7 +52,10 @@ function RepositoriesPages() {
           </ul>
         </div>
       </main>
+      <div className='footer'>
       <Rodape />
+      </div>
+      
     </div>
   );
 }

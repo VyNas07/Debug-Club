@@ -158,7 +158,7 @@ const getProgressBarColor = (score) => {
             <Link to='/profileedit'>
               <div className="img-separated">
                 <button className="edit-button">
-                  <img src={iconeEdit} alt="botão editar" />
+                  <img src={iconeEdit} alt="botão editar" className='icon-edit' />
                 </button>
               </div>
             </Link>
@@ -272,7 +272,10 @@ const getProgressBarColor = (score) => {
           </div>
         </main>
       </div>
+      <div className='footer'>
       <Rodape />
+      </div>
+      
     </div>
   );
 };

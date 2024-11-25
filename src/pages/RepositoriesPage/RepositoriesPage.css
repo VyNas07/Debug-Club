@@ -49,6 +49,7 @@
   .repo-title {
     font-size: 16px;
     font-weight: bold;
+    z-index: 1;
   }
   
   .repo-user {
@@ -100,4 +101,54 @@
   .repo-title:hover::after {
     width: 100%; /* Preenche a linha no hover */
   }
+
+  /* Definindo a responsividade para telas menores */
+@media (max-width: 768px) {
+  .main-content {
+    width: 95%; /* Aumenta a largura para 95% em telas menores */
+    padding: 10px; /* Reduz o padding */
+  }
+
+  h1 {
+    font-size: 18px; /* Diminuindo o tamanho do título */
+  }
+
+  .repo {
+    width: 100%;
+    padding: 10px; /* Ajustando o padding */
+  }
+
+  .repository-item {
+    padding: 10px 0; /* Ajustando o padding dos itens */
+    margin-bottom: 5px; /* Menor espaçamento entre os itens */
+  }
+
+  .repo-title {
+    font-size: 14px; /* Diminuindo o tamanho do título */
+    font-weight: bold; /* Menos peso no texto */
+  }
+
+  .repo-user {
+    font-size: 12px; /* Diminuindo o tamanho da fonte do usuário */
+  }
+
+  .repo-status {
+    font-size: 12px; /* Ajustando o tamanho da fonte para status e data */
+  }
+
+  .repo-icon {
+    width: 24px; /* Ajustando o tamanho do ícone */
+    height: 24px;
+  }
+
+  .repo-title::after {
+    display: none; /* Remover o efeito de hover da linha */
+  }
+
+  /* Removendo o Rodape em telas menores */
+  .footer {
+    display: none;
+  }
+}
+
   
