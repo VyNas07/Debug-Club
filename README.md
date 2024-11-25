@@ -31,11 +31,21 @@ Com foco em **gamificação e interatividade**, o projeto incentiva o aprendizad
 - **Ranking Global**:  
   O **Ranking Global** incentiva contribuições ao classificar os usuários com base em suas atividades e engajamento na plataforma. Cada ação, como resolver bugs, contribuir para repositórios ou interagir com outros membros, acumula pontos. Esses pontos são então usados para posicionar os usuários em um ranking global, promovendo uma competição saudável e reconhecendo os desenvolvedores mais ativos e dedicados.
 
+  ![Foto - Ranking](src/assets/IMG-Readme/Captura%20de%20Tela%20(132).png)
+
+
 - **DashBoard**:
   A **DashBoard** permite que os usuários analisem sua evolução e contribuições ao longo do tempo. Ela fornece uma visão detalhada das métricas de desempenho, como o número de bugs resolvidos, repositórios contribuídos e outras atividades relevantes. Com essa ferramenta, os desenvolvedores podem monitorar seu progresso, identificar áreas de melhoria e planejar suas próximas ações na plataforma.
 
+  ![Foto - Dashboard](src/assets/IMG-Readme/Captura%20de%20Tela%20(133).png)
+
+
 - **Cálculo de pontuação**:
   O **Sistema de Cálculo de Pontuação** atribui uma pontuação global aos usuários com base em suas contribuições na plataforma. Cada atividade realizada, como resolver um bug ou contribuir para um repositório, gera pontos específicos. Esses pontos são somados para formar a pontuação total do usuário, que é usada para determinar sua posição no Ranking Global. Esse sistema motiva os desenvolvedores a participarem mais ativamente e oferece uma maneira justa e transparente de medir o impacto de suas contribuições.
+
+  ![Foto - Perfil](src/assets/IMG-Readme/Captura%20de%20Tela%20(129).png)
+
+
 ---
 
 ## **Tecnologias Utilizadas**
