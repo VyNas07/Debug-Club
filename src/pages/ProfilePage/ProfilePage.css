@@ -108,22 +108,28 @@ body {
   display: flex;
   justify-content: center;
 }
-.info-icon2{
-width: 80%;
-margin-left: 350%;
+.info-button{
+  position: absolute;
+  width: 40px;
+  right: 15%;
+  top: 49%;
+
+
 }
 
 
-.info-message2{
+.info-message2 {
   position: absolute;
-  left: 92em;
-  top: 32em;
+  left: 85%;
+  width: 15%;
+  top: 63%;
+  transform: translate(-80%, -50%); /* Centraliza de maneira mais dinâmica */
   background-color: #f5f5f5;
-  padding: 10px 20px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 12px;
-  max-width: 400px;
+  padding: 1em; /* Usa unidades relativas para dimensionamento */
+  border-radius: 0.5em; /* Define bordas arredondadas com unidades relativas */
+  box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+  font-size: 12px; /* Ajusta o tamanho da fonte em relação ao contexto */
+  max-width: 90%; /* Limita a largura a 90% da largura da tela */
   overflow-wrap: break-word;
   white-space: normal;
   z-index: 10;
@@ -314,6 +320,11 @@ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   .ranking-card {
     width: 100%; 
     padding: 10px;
+  }
+
+  .info-message2 {
+    
+    top: 187%;
   }
 }
 

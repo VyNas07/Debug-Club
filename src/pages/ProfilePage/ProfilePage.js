@@ -202,6 +202,12 @@ const getProgressBarColor = (score) => {
               <div className="ranking-card">
                 <div className="info-separation">
                 <h3>Ranking Atual:</h3>
+                </div>
+                <span className="ranking-value">{ranking}</span>
+
+              </div>
+              <div className="ranking-card">
+                <h3>Pontuação:</h3>
                 <button className="info-button" onClick={() => setShowInfoRanking(!showInfoRanking)}>
                   <img src={infoIcon} className="info-icon2"/>
                 </button>
@@ -216,12 +222,6 @@ const getProgressBarColor = (score) => {
                         Pull Requests: 10Pts</p>
                         </div>
                       )}
-                </div>
-                <span className="ranking-value">{ranking}</span>
-
-              </div>
-              <div className="ranking-card">
-                <h3>Pontuação:</h3>
                 <span className="ranking-value">{score}</span>
               </div>
             </div>
