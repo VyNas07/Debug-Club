@@ -412,6 +412,12 @@ table th {
   padding: 0;
   cursor: pointer;
   margin-left: 5px; /* Adiciona um pequeno espaçamento entre o texto e o ícone */
+  right: -110%;
+  top: -50%;
+}
+.info-icon {
+  width: 17px;
+  height: 17px;
 }
 
 .info-message {
