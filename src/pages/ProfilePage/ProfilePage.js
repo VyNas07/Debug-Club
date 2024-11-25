@@ -13,6 +13,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import LoadingScreen from '../../components/LoadingScreen/LoadingScreen';// Importa a função de atualização de ranking
 import ContributionReviewChart from '../../components/ContributionReviewChart/ContributionReviewChart';
 import ContributionChart from '../../components/ContributionChart/ContributionChart';
+import infoIcon from '../../assets/IMG-Gerais/informacoes.png';
 
 
 const ProfilePage = () => {
@@ -27,6 +28,8 @@ const ProfilePage = () => {
   const [ranking, setRanking] = useState(0); // Estado para armazenar o ranking do usuário
   const [loading, setLoading] = useState(true); // Estado de carregamento
 
+  const [showInfoRanking, setShowInfoRanking] = useState(false);
+  
   const fetchUserProfile = async (userId) => {
     if (!userId) {
       console.log("Erro: userId é nulo ou indefinido.");
@@ -146,7 +149,6 @@ const ProfilePage = () => {
 const getProgressBarColor = (score) => {
   return score >= 1000 ? '#FFD700' : '#4A90E2'; // Dourado para 1000 ou mais, verde para menos de 1000
 };
-
   
 
   return (
@@ -198,8 +200,25 @@ const getProgressBarColor = (score) => {
           <div className="ranking-contribution-container">
             <div className="ranking-section-profile">
               <div className="ranking-card">
+                <div className="info-separation">
                 <h3>Ranking Atual:</h3>
+                <button className="info-button" onClick={() => setShowInfoRanking(!showInfoRanking)}>
+                  <img src={infoIcon} className="info-icon"/>
+                </button>
+                {showInfoRanking && (
+                        <div className="info-message2"><p>
+                        Forks Inseridos: 2pts
+                        <br></br>
+                        Commits em Repositórios: 3pts
+                        <br></br>
+                        Issues Criadas: 5pts
+                        <br></br>
+                        Pull Requests: 10Pts</p>
+                        </div>
+                      )}
+                </div>
                 <span className="ranking-value">{ranking}</span>
+
               </div>
               <div className="ranking-card">
                 <h3>Pontuação:</h3>

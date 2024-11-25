@@ -104,6 +104,35 @@ body {
   color: #4A90E2;
 }
 
+.info-separation{
+  display: flex;
+  justify-content: center;
+}
+.info-icon{
+width: 80%;
+margin-left: 350%;
+}
+
+
+.info-message2{
+  position: absolute;
+  left: 92em;
+  top: 32em;
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  max-width: 400px;
+  overflow-wrap: break-word;
+  white-space: normal;
+  z-index: 10;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+  font-weight: bold;
+}
+
 .ranking-section-profile {
   flex-direction: column;
   gap: 15px;
@@ -446,6 +475,14 @@ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   .img-separated img {
     width: 30px;
+  }
+
+  .contribution-section {
+    width: 95%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
   }
 }
 
