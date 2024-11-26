@@ -225,6 +225,7 @@ const getProgressBarColor = (score) => {
                 <span className="ranking-value">{score}</span>
               </div>
             </div>
+
             <div className="contribution-section">
             <div className="contributions-historico">
             <div className="chart">

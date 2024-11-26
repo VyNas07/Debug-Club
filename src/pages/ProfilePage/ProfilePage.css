@@ -113,9 +113,9 @@ body {
   width: 40px;
   right: 15%;
   top: 49%;
-
-
 }
+
+
 
 
 .info-message2 {
@@ -138,6 +138,7 @@ body {
   transition: opacity 0.2s ease-in-out;
   font-weight: bold;
 }
+
 
 .ranking-section-profile {
   flex-direction: column;
